@@ -1,0 +1,14 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# nothing to build — static site
+node_modules/
+
+# secrets — NEVER commit the token
+.gh-token
+.gh-token.*
+*.token
