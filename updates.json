@@ -1,9 +1,9 @@
 {
   "product": "Business Brain Pro",
   "generated_at": "2026-07-13",
-  "schema": "1.1.0",
+  "schema": "1.0.0",
   "plugins": {
-    "command-center": "0.6.0",
+    "command-center": "0.8.0",
     "compass": "0.3.0",
     "ghostwriter": "0.1.0",
     "outreach": "0.1.0",
