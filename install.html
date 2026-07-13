@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install your Business Brain</title>
+<meta name="description" content="How to install your Business Brain plugin in the Claude desktop app, and what to do if something snags. Setup is done with you.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Install your Business Brain">
+<meta property="og:description" content="How the plugin file goes in, how to wake it up, and the fixes for the usual snags.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://businessbrainpro.com/install">
+<link rel="alternate" hreflang="en" href="https://businessbrainpro.com/install">
+<link rel="alternate" hreflang="ro" href="https://creierulafacerii.ro/">
+<link rel="alternate" hreflang="x-default" href="https://businessbrainpro.com/install">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='%230f0f0f' d='M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z'/%3E%3Cpath stroke='%23e8490e' d='M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z'/%3E%3Cpath stroke='%230f0f0f' d='M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,701,900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fafafa;
+    --ink:#0f0f0f;
+    --ink-soft:#2b2b2b;
+    --muted:#595551;
+    --line:#e8e3de;
+    --accent:#e8490e;
+    --accent-deep:#c93c05;
+    --accent-soft:rgba(232,73,14,.07);
+    --card:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font:17px/1.65 "Satoshi",system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    min-height:100vh;display:flex;flex-direction:column;
+    background-image:radial-gradient(rgba(15,15,15,.05) 1px, transparent 1.4px);
+    background-size:26px 26px;
+  }
+  ::selection{background:var(--accent);color:#fff}
+  .glow{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(620px 440px at 15% 12%, rgba(232,73,14,.07), transparent 70%),
+      radial-gradient(680px 460px at 88% 88%, rgba(232,73,14,.06), transparent 70%);}
+  .wrap{max-width:700px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+  header{padding:30px 0}
+  .logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .logo svg{flex:none}
+  .logo .wm b{display:block;font-size:17px;font-weight:900;letter-spacing:-.01em;line-height:1.15}
+  .logo .wm span{display:block;font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+
+  main{flex:1;padding:20px 0 52px}
+  .badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent-deep);margin-bottom:20px;
+  }
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+  h1{font-size:clamp(34px,6.4vw,58px);line-height:1.05;font-weight:700;letter-spacing:-.028em;max-width:12em}
+  h1 em{font-style:italic;color:var(--accent)}
+  .sub{max-width:36em;color:var(--muted);font-size:clamp(16px,2vw,19px);margin-top:22px}
+  .sub b{color:var(--ink);font-weight:700}
+
+  h2{font-size:22px;font-weight:900;letter-spacing:-.01em;margin:46px 0 18px}
+
+  .steps{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:14px}
+  .steps li{
+    counter-increment:step;position:relative;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px 20px 64px;
+    box-shadow:0 1px 0 rgba(15,15,15,.02),0 18px 40px -32px rgba(15,15,15,.3);
+  }
+  .steps li::before{
+    content:counter(step);position:absolute;left:18px;top:18px;
+    width:32px;height:32px;border-radius:50%;
+    background:var(--accent);color:#fff;
+    font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;
+  }
+  .steps b{display:block;font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.01em}
+  .steps p{margin-top:6px;color:var(--muted);font-size:15.5px}
+  .path{
+    display:inline-block;margin-top:10px;font-size:13.5px;font-weight:700;color:var(--ink-soft);
+    background:var(--accent-soft);border:1px solid rgba(232,73,14,.18);border-radius:8px;
+    padding:6px 11px;line-height:1.5;
+  }
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;
+    background:rgba(15,15,15,.05);border-radius:5px;padding:1px 6px;color:var(--ink);
+  }
+
+  .rescue{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:2px}
+  .rescue li{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+  }
+  .rescue b{display:block;font-size:16px;font-weight:900;color:var(--ink);margin-bottom:5px;letter-spacing:-.01em}
+  .rescue p{color:var(--muted);font-size:15.5px}
+
+  .help{
+    margin-top:40px;background:var(--ink);color:#fff;border-radius:20px;
+    padding:30px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;
+  }
+  .help .t b{display:block;font-size:20px;font-weight:900;letter-spacing:-.01em}
+  .help .t span{display:block;color:rgba(255,255,255,.66);font-size:15px;margin-top:5px;max-width:30em}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:52px;padding:14px 26px;border-radius:999px;
+    font-size:16px;font-weight:700;text-decoration:none;white-space:nowrap;
+    background:var(--accent);color:#fff;
+    transition:transform .25s,box-shadow .25s;
+  }
+  .btn svg{flex:none}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(232,73,14,.55)}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+
+  footer{padding:26px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;margin-top:52px}
+  footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+  @media (max-width:640px){footer .wrap{flex-direction:column;align-items:flex-start;gap:10px}.help{flex-direction:column;align-items:flex-start}}
+  footer a{color:var(--ink);text-decoration:none;font-weight:700}
+  footer a:hover{color:var(--accent-deep)}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="The Business Brain">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path stroke="#0f0f0f" d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+        <path stroke="#e8490e" d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+        <path stroke="#0f0f0f" d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+        <path stroke="#0f0f0f" d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+        <path stroke="#e8490e" d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+        <path stroke="#0f0f0f" d="M6 18a4 4 0 0 1-1.967-.516"/>
+        <path stroke="#e8490e" d="M19.967 17.484A4 4 0 0 1 18 18"/>
+      </svg>
+      <span class="wm"><b>The Business Brain</b><span>It remembers. It acts. It reports.</span></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="badge"><span class="dot"></span>Install &amp; setup</p>
+    <h1>Getting your Business Brain <em>in</em>.</h1>
+    <p class="sub">You'll get your plugin file <b>from me directly</b> — it comes with your license, not from a download page. Setup is something we do together over your first session. This page is the reference: how the file goes in, how to wake it up, and the quick fixes for the usual snags.</p>
+
+    <h2>Install it</h2>
+    <ol class="steps">
+      <li>
+        <b>Get your file</b>
+        <p>I send you your Business Brain — a single <code>.plugin</code> file. Save it somewhere you can find it (your Downloads folder is fine).</p>
+      </li>
+      <li>
+        <b>Add it in the Claude desktop app</b>
+        <p>Open the Claude desktop app and add the file as a personal plugin.</p>
+        <span class="path">Customize → Personal plugins → + → Create plugin → Upload plugin → pick the file I sent</span>
+      </li>
+      <li>
+        <b>Start fresh and say the word</b>
+        <p>Plugins load when a chat begins, so open a <b>new chat</b> and say <code>set up my command center</code>. That's the moment your Business Brain wakes up and starts building your system with you.</p>
+      </li>
+    </ol>
+
+    <h2>Something not working?</h2>
+    <ul class="rescue">
+      <li>
+        <b>Not all your tools showed up</b>
+        <p>Usually an older file or an app that needs a restart. Ask me for the latest file, re-upload it (step 2), then fully quit and reopen the desktop app — plugins only reload on a clean start.</p>
+      </li>
+      <li>
+        <b>The file won't upload</b>
+        <p>Make sure you're on the latest Claude desktop app and uploading the <code>.plugin</code> file exactly as I sent it (not unzipped, not renamed). If it still refuses, send me a screenshot and I'll sort it.</p>
+      </li>
+      <li>
+        <b>The app won't open, or it's running slow</b>
+        <p>That's before the Business Brain is even involved. Restart the app — and your computer if it's sluggish — update to the latest version, then try step 2 again.</p>
+      </li>
+    </ul>
+
+    <div class="help">
+      <div class="t">
+        <b>Stuck on any of this?</b>
+        <span>Email me and I'll walk you through it. This is done with you — never left to a manual.</span>
+      </div>
+      <a class="btn" href="mailto:razvan@smartfreedomstrategies.com?subject=Help%20installing%20The%20Business%20Brain">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Email me
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:var(--ink)">The Business Brain</b> · By Razvan Popescu</div>
+    <div><a href="https://creierulafacerii.ro/" lang="ro" hreflang="ro">În română: creierulafacerii.ro</a></div>
+  </div>
+</footer>
+</body>
+</html>
