@@ -62,8 +62,8 @@ Repeat for `www.businessbrainpro.com` if you want www to resolve too.
 
 ## Also going on this domain (next steps, out of scope for now)
 
-`businessbrainpro.com` is also the EN ecosystem infrastructure. When you get there, these live here too:
-- **`updates.json`**: the update-discovery file, served at `businessbrainpro.com/updates.json`. Generated with `gen-updates-json.sh` from the umbrella repo (never by hand) and copied here on every release.
-- **`_redirects`**: the stable Cloudflare Pages redirects, `/template` to the published Notion template link (and the future `/install`). Cloudflare Pages format, one line per rule: `/template  https://…notion…  302`.
+`businessbrainpro.com` is also the EN ecosystem infrastructure:
+- **`_redirects`** ✅ *live in this repo*: the stable Cloudflare Pages redirects. `/template` (and the alias `/template-notion`) → the published Command Center — Template v1 Notion link, 302. The Command Center skills ship ONLY this stable `/template` path, so it is load-bearing for a fresh client install. Destination is recorded in the umbrella repo's `versions.md`; change it here, never in the plugins. (`/install` is still a future addition.)
+- **`updates.json`**: the update-discovery file, served at `businessbrainpro.com/updates.json`. Generated with `gen-updates-json.sh` from the umbrella repo (never by hand) and copied here on every release. Still to add.
 
-These unlock the remaining steps in `launch-checklist.md` (pointing the redirects and the update endpoint). Deliberately not included now.
+These unlock the remaining steps in `launch-checklist.md` (the update endpoint; verifying the redirects resolve after deploy).
