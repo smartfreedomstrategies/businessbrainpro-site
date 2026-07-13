@@ -64,6 +64,6 @@ Repeat for `www.businessbrainpro.com` if you want www to resolve too.
 
 `businessbrainpro.com` is also the EN ecosystem infrastructure:
 - **`_redirects`** ✅ *live in this repo*: the stable Cloudflare Pages redirects. `/template` (and the alias `/template-notion`) → the published Command Center — Template v1 Notion link, 302. The Command Center skills ship ONLY this stable `/template` path, so it is load-bearing for a fresh client install. Destination is recorded in the umbrella repo's `versions.md`; change it here, never in the plugins. (`/install` is still a future addition.)
-- **`updates.json`**: the update-discovery file, served at `businessbrainpro.com/updates.json`. Generated with `gen-updates-json.sh` from the umbrella repo (never by hand) and copied here on every release. Still to add.
+- **`updates.json`** ✅ *live in this repo*: the update-discovery file, served at `businessbrainpro.com/updates.json`. Generated with `gen-updates-json.sh` from the umbrella repo (never edited by hand) and copied here on every release. session-starter Step 0.5b reads it (weekly cache, fail-silent, read-only) to nudge clients when a newer version ships. Exposes only product names + versions — no client data. **On every release: regenerate in the umbrella, copy the file here, push.**
 
 These unlock the remaining steps in `launch-checklist.md` (the update endpoint; verifying the redirects resolve after deploy).
