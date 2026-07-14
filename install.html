@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Install your Business Brain</title>
-<meta name="description" content="How to install your Business Brain plugin in the Claude desktop app, and what to do if something snags. Setup is done with you.">
+<title>Set up your Business Brain</title>
+<meta name="description" content="Your Business Brain, set up start to finish. We do it together, in about fifteen minutes. Nothing here can break anything.">
 <meta name="robots" content="noindex">
-<meta property="og:title" content="Install your Business Brain">
-<meta property="og:description" content="How the plugin file goes in, how to wake it up, and the fixes for the usual snags.">
+<meta property="og:title" content="Set up your Business Brain">
+<meta property="og:description" content="The whole setup, step by step. We do it together, in about fifteen minutes.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://businessbrainpro.com/install">
 <link rel="alternate" hreflang="en" href="https://businessbrainpro.com/install">
@@ -64,7 +64,32 @@
   .sub{max-width:36em;color:var(--muted);font-size:clamp(16px,2vw,19px);margin-top:22px}
   .sub b{color:var(--ink);font-weight:700}
 
-  h2{font-size:22px;font-weight:900;letter-spacing:-.01em;margin:46px 0 18px}
+  .calm{
+    margin-top:26px;background:var(--accent-soft);border:1px solid rgba(232,73,14,.18);
+    border-radius:16px;padding:20px 22px;
+  }
+  .calm b{color:var(--ink);font-weight:900}
+  .calm p{color:var(--ink-soft);font-size:16px}
+  .calm p + p{margin-top:10px}
+
+  h2{font-size:22px;font-weight:900;letter-spacing:-.01em;margin:48px 0 10px}
+  .lead{color:var(--muted);font-size:16px;margin-bottom:18px;max-width:38em}
+
+  .gets{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .gets li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+    box-shadow:0 1px 0 rgba(15,15,15,.02),0 18px 40px -34px rgba(15,15,15,.3);}
+  .tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;
+    padding:3px 9px;border-radius:6px;margin-bottom:9px}
+  .tag.core{background:var(--accent);color:#fff}
+  .tag.addon{background:var(--accent-soft);color:var(--accent-deep);border:1px solid rgba(232,73,14,.25)}
+  .gets b{display:block;font-size:16px;font-weight:900;color:var(--ink);margin-bottom:4px;letter-spacing:-.01em}
+  .gets p{color:var(--muted);font-size:15px}
+  .more{
+    margin-top:14px;display:flex;gap:12px;align-items:flex-start;
+    color:var(--ink-soft);font-size:15.5px;
+    border-left:3px solid var(--accent);padding:4px 0 4px 16px;
+  }
+  .more b{color:var(--ink);font-weight:900}
 
   .steps{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:14px}
   .steps li{
@@ -79,7 +104,8 @@
     background:var(--accent);color:#fff;
     font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;
   }
-  .steps b{display:block;font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.01em}
+  .steps li > b{display:block;font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.01em}
+  .steps p b, .steps .path b{font-weight:900;color:var(--ink)}
   .steps p{margin-top:6px;color:var(--muted);font-size:15.5px}
   .path{
     display:inline-block;margin-top:10px;font-size:13.5px;font-weight:700;color:var(--ink-soft);
@@ -90,11 +116,27 @@
     font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;
     background:rgba(15,15,15,.05);border-radius:5px;padding:1px 6px;color:var(--ink);
   }
+  .steps a,.lead a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px;font-weight:700}
+  .steps a:hover,.lead a:hover{color:var(--accent)}
+  .steps a code,.lead a code{color:inherit;background:var(--accent-soft);border:1px solid rgba(232,73,14,.18)}
+
+  /* Screenshot slots. To fill one, replace the <div class="ph">...</div>
+     with:  <img src="assets/shot-1-duplicate.png" alt="describe the shot"> */
+  .shot{margin-top:14px;border:2px dashed rgba(232,73,14,.4);border-radius:12px;
+    background:var(--accent-soft);overflow:hidden}
+  .shot .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:26px 18px;gap:6px}
+  .shot .ph b{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep)}
+  .shot .ph span{font-size:13px;color:var(--muted);font-weight:500;max-width:34em}
+  .shot .ph .fn{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;color:var(--ink);font-weight:700;background:#fff;border:1px solid rgba(232,73,14,.28);border-radius:6px;padding:3px 10px}
+  .shot .ph code{background:#fff;border:1px solid rgba(232,73,14,.2)}
+  .shot img{display:block;width:100%;height:auto}
+  .shot:has(img){border:1px solid var(--line);background:var(--card)}
+  .shot figcaption{padding:11px 15px;font-size:13.5px;color:var(--muted);line-height:1.5}
+  .shot figcaption b{color:var(--ink);font-weight:900}
 
   .rescue{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:2px}
-  .rescue li{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;
-  }
+  .rescue li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
   .rescue b{display:block;font-size:16px;font-weight:900;color:var(--ink);margin-bottom:5px;letter-spacing:-.01em}
   .rescue p{color:var(--muted);font-size:15.5px}
 
@@ -144,24 +186,161 @@
 
 <main>
   <div class="wrap">
-    <p class="badge"><span class="dot"></span>Install &amp; setup</p>
-    <h1>Getting your Business Brain <em>in</em>.</h1>
-    <p class="sub">You'll get your plugin file <b>from me directly</b> — it comes with your license, not from a download page. Setup is something we do together over your first session. This page is the reference: how the file goes in, how to wake it up, and the quick fixes for the usual snags.</p>
+    <p class="badge"><span class="dot"></span>Welcome</p>
+    <h1>Let's get your Business Brain <em>set up</em>.</h1>
+    <p class="sub">This is the whole thing, start to finish, on one page. It all happens in the Claude desktop app (Cowork). Have a read before we talk so nothing is a surprise, then keep it to look back on.</p>
 
-    <h2>Install it</h2>
+    <div class="calm">
+      <p><b>You do not have to do any of this alone.</b> We go through it together on our call, live, and it takes about fifteen minutes.</p>
+      <p>And you cannot break anything. Nothing gets deleted, and every real change asks you first. If a step ever looks off, we just stop and sort it.</p>
+    </div>
+
+    <h2>What you're getting</h2>
+    <p class="lead">One core system, plus add-ons that snap on when you want them. Each one is a single file that goes in the same way.</p>
+    <ul class="gets">
+      <li>
+        <span class="tag core">The core</span>
+        <b>Command Center</b>
+        <p>Your whole business, organized in Notion, that fills itself in as you talk. Your phone quick-add, Capture, is built right in.</p>
+      </li>
+      <li>
+        <span class="tag addon">Add-on</span>
+        <b>Compass</b>
+        <p>Goals, a daily check-in, and a straight answer to "am I on track?" whenever you ask.</p>
+      </li>
+      <li>
+        <span class="tag addon">Add-on</span>
+        <b>Ghostwriter</b>
+        <p>Writes in your voice. Newsletters, posts, pages, sales copy, all of it, drawn from what your Business Brain already knows about you.</p>
+      </li>
+      <li>
+        <span class="tag addon">Add-on</span>
+        <b>Outreach</b>
+        <p>Keeps your relationships warm and drafts messages that sound like you, not a robot.</p>
+      </li>
+    </ul>
+    <p class="more"><span><b>More on the way.</b> New add-ons land regularly. When one arrives that fits you, it installs exactly like the rest: one file, about thirty seconds. You will never have to relearn anything.</span></p>
+
+    <h2>The setup, step by step</h2>
+    <p class="lead">We will do these together on the call. Here is the whole path so you know what is coming.</p>
     <ol class="steps">
       <li>
-        <b>Get your file</b>
-        <p>I send you your Business Brain — a single <code>.plugin</code> file. Save it somewhere you can find it (your Downloads folder is fine).</p>
+        <b>Create your Business Brain project</b>
+        <p>In the Claude desktop app, create a new <b>project</b> (Cowork calls them projects). Name it whatever you like. This is your home base: where your Business Brain lives and where we work every session.</p>
+        <figure class="shot">
+          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
+               <img src="assets/shot-1-new-project.png" alt="The new-project screen in the Claude desktop app"> -->
+          <div class="ph">
+            <b>Screenshot to add</b>
+            <span class="fn">assets/shot-1-new-project.png</span>
+            <span>The new-project screen in the Claude desktop app. Creating a project gives your Business Brain a home base that loads your instructions every time you open a chat.</span>
+          </div>
+        </figure>
       </li>
       <li>
-        <b>Add it in the Claude desktop app</b>
-        <p>Open the Claude desktop app and add the file as a personal plugin.</p>
+        <b>Copy your Notion template</b>
+        <p>Go to <a href="https://businessbrainpro.com/template"><code>businessbrainpro.com/template</code></a> and click <b>Duplicate</b> (the icon at the top right). That drops a fresh, private copy into your own Notion. This is where your Business Brain keeps everything.</p>
+        <figure class="shot">
+          <img src="assets/shot-2-duplicate.png" alt="The Command Center template page in Notion">
+          <figcaption>The template you land on. To copy it, click <b>Duplicate</b>, the icon at the top right of the page.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <b>Let Claude see your Notion</b>
+        <p>Connect the Notion connector in Claude and click <b>Allow</b>. This is what lets your Business Brain read and build inside your workspace. It only ever touches your own workspace, nothing else.</p>
+        <figure class="shot">
+          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
+               <img src="assets/shot-3-allow.png" alt="The Notion connector Allow screen"> -->
+          <div class="ph">
+            <b>Screenshot to add</b>
+            <span class="fn">assets/shot-3-allow.png</span>
+            <span>The Notion connector's Allow screen. Clicking Allow is what lets your Business Brain read and build inside your Notion, and nowhere else. Blur anything personal.</span>
+          </div>
+        </figure>
+      </li>
+      <li>
+        <b>Get your files from me</b>
+        <p>I send everything to you directly: your plugins (the core, plus any add-ons you have) and one <b>instructions file</b>. Save them somewhere you can find them (your Downloads folder is fine).</p>
+      </li>
+      <li>
+        <b>Add each plugin in the Claude desktop app</b>
+        <p>Same quick path for every file. Do the core first, then each add-on the same way.</p>
         <span class="path">Customize → Personal plugins → + → Create plugin → Upload plugin → pick the file I sent</span>
+        <figure class="shot">
+          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
+               <img src="assets/shot-4-personal-plugins.png" alt="The Personal plugins menu open"> -->
+          <div class="ph">
+            <b>Screenshot to add</b>
+            <span class="fn">assets/shot-4-personal-plugins.png</span>
+            <span>The Personal plugins menu (Customize → Personal plugins). This is where every plugin gets added to Claude.</span>
+          </div>
+        </figure>
+        <figure class="shot">
+          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
+               <img src="assets/shot-5-upload.png" alt="The Upload plugin file picker with the .plugin file selected"> -->
+          <div class="ph">
+            <b>Screenshot to add</b>
+            <span class="fn">assets/shot-5-upload.png</span>
+            <span>The Upload plugin file picker with your <code>.plugin</code> selected. This is the moment the plugin file goes in.</span>
+          </div>
+        </figure>
+        <figure class="shot">
+          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
+               <img src="assets/shot-6-installed.png" alt="The plugins showing as installed in the list"> -->
+          <div class="ph">
+            <b>Screenshot to add</b>
+            <span class="fn">assets/shot-6-installed.png</span>
+            <span>Your plugins listed as installed. Confirms they loaded and are ready to use.</span>
+          </div>
+        </figure>
       </li>
       <li>
-        <b>Start fresh and say the word</b>
-        <p>Plugins load when a chat begins, so open a <b>new chat</b> and say <code>set up my command center</code>. That's the moment your Business Brain wakes up and starts building your system with you.</p>
+        <b>Paste in your instructions</b>
+        <p>Open your project's <b>Instructions</b> (in the project settings) and paste in the instructions file I sent. This is your Business Brain's playbook: how it writes, how it builds, how it keeps your work safe. It loads itself every time you open a chat in this project.</p>
+        <figure class="shot">
+          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
+               <img src="assets/shot-7-instructions.png" alt="The project Instructions field with the text pasted in"> -->
+          <div class="ph">
+            <b>Screenshot to add</b>
+            <span class="fn">assets/shot-7-instructions.png</span>
+            <span>The project's Instructions field with your instructions pasted in. This is the playbook that loads itself every session.</span>
+          </div>
+        </figure>
+      </li>
+      <li>
+        <b>Restart the app</b>
+        <p>Fully quit and reopen the Claude desktop app. Plugins only wake up on a clean start, so this one matters.</p>
+      </li>
+      <li>
+        <b>Say the word</b>
+        <p>Open a <b>new chat inside your project</b> and say <code>set up my command center</code>. That is the moment your Business Brain comes alive and starts building your system with you.</p>
+        <figure class="shot">
+          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
+               <img src="assets/shot-8-setup.png" alt="A fresh chat after saying set up my command center"> -->
+          <div class="ph">
+            <b>Screenshot to add</b>
+            <span class="fn">assets/shot-8-setup.png</span>
+            <span>A fresh chat right after you say <code>set up my command center</code>. This wakes the system up and starts building with you.</span>
+          </div>
+        </figure>
+      </li>
+    </ol>
+
+    <h2>Already set up? Adding an add-on or re-installing</h2>
+    <p class="lead">If your Business Brain is already running and you just need to add an add-on (or re-load a plugin after an update), skip everything above. It is three quick steps, no re-doing Notion.</p>
+    <ol class="steps">
+      <li>
+        <b>Save the file I sent</b>
+        <p>For an add-on it is a new <code>.plugin</code>. For an update it is the newer version of one you already have.</p>
+      </li>
+      <li>
+        <b>Upload it the same way</b>
+        <p>An update just replaces the old one.</p>
+        <span class="path">Customize → Personal plugins → + → Create plugin → Upload plugin → pick the file</span>
+      </li>
+      <li>
+        <b>Restart, then use it</b>
+        <p>Quit and reopen the app, start a <b>new chat inside your project</b>, and say the add-on's magic words. No re-duplicating Notion, no re-pasting your instructions.</p>
       </li>
     </ol>
 
@@ -169,26 +348,26 @@
     <ul class="rescue">
       <li>
         <b>Not all your tools showed up</b>
-        <p>Usually an older file or an app that needs a restart. Ask me for the latest file, re-upload it (step 2), then fully quit and reopen the desktop app — plugins only reload on a clean start.</p>
+        <p>Usually an older file or an app that needs a restart. Ask me for the latest file, re-upload it (step 5), then fully quit and reopen the desktop app. Plugins only reload on a clean start.</p>
       </li>
       <li>
         <b>The file won't upload</b>
-        <p>Make sure you're on the latest Claude desktop app and uploading the <code>.plugin</code> file exactly as I sent it (not unzipped, not renamed). If it still refuses, send me a screenshot and I'll sort it.</p>
+        <p>Make sure you are on the latest Claude desktop app and uploading the <code>.plugin</code> file exactly as I sent it (not unzipped, not renamed). If it still refuses, send me a screenshot and I will sort it.</p>
       </li>
       <li>
         <b>The app won't open, or it's running slow</b>
-        <p>That's before the Business Brain is even involved. Restart the app — and your computer if it's sluggish — update to the latest version, then try step 2 again.</p>
+        <p>That is before your Business Brain is even involved. Restart the app, and your computer if it is sluggish, update to the latest version, then try step 5 again.</p>
       </li>
     </ul>
 
     <div class="help">
       <div class="t">
         <b>Stuck on any of this?</b>
-        <span>Email me and I'll walk you through it. This is done with you — never left to a manual.</span>
+        <span>Message me and I will walk you through it. This is done with you, never left to a manual.</span>
       </div>
-      <a class="btn" href="mailto:razvan@smartfreedomstrategies.com?subject=Help%20installing%20The%20Business%20Brain">
+      <a class="btn" href="mailto:razvan@smartfreedomstrategies.com?subject=Help%20setting%20up%20my%20Business%20Brain">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Email me
+        Message me
       </a>
     </div>
   </div>
