@@ -10,6 +10,8 @@
 /template         https://rose-spleen-e47.notion.site/Command-Center-Template-v1-aa145dba04ac8288af4481b047bf4f16   302
 /template-notion  https://rose-spleen-e47.notion.site/Command-Center-Template-v1-aa145dba04ac8288af4481b047bf4f16   302
 
-# Rebrand 2026-07-15: thefoundersbrain.com attached and verified serving, so old-domain links 301 there.
-https://businessbrainpro.com/* https://thefoundersbrain.com/:splat 301
-https://www.businessbrainpro.com/* https://thefoundersbrain.com/:splat 301
+# Rebrand 2026-07-15: the old-domain 301 (businessbrainpro.com -> thefoundersbrain.com) CANNOT live in this
+# file: Cloudflare Pages only accepts relative paths as redirect sources (absolute-URL sources are a Netlify
+# feature and are silently ignored here). It lives as a Redirect Rule on the businessbrainpro.com zone:
+# dashboard -> businessbrainpro.com -> Rules -> Redirect Rules -> "All incoming requests" ->
+# dynamic redirect to concat("https://thefoundersbrain.com", http.request.uri.path), 301, preserve query string.

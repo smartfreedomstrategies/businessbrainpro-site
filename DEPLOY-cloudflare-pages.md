@@ -2,7 +2,7 @@
 
 > **Rebrand 2026-07-15 — what's left to do by hand (operator):**
 > 1. Buy/confirm `thefoundersbrain.com`, add it to Cloudflare, then Workers & Pages → `businessbrainpro-site` → Custom domains → **Set up a domain** → `thefoundersbrain.com` + `www.thefoundersbrain.com`.
-> 2. Once the new domain serves the site, uncomment the two 301 lines at the bottom of `_redirects` (old domain → new domain) and push.
+> 2. Once the new domain serves the site, add the old-domain 301 as a **Redirect Rule** on the `businessbrainpro.com` zone (NOT in `_redirects`; Pages ignores host-based sources there): dashboard → businessbrainpro.com → Rules → Redirect Rules → create rule → match **All incoming requests** → **Dynamic** redirect → expression `concat("https://thefoundersbrain.com", http.request.uri.path)` → status **301** → tick **Preserve query string**.
 > 3. Create the `hello@thefoundersbrain.com` mailbox/alias before `full-page.html` goes to the front (its CTAs point there).
 > The Pages project itself keeps the name `businessbrainpro-site`; everything below documents the original old-domain deploy and still applies mechanically.
 
