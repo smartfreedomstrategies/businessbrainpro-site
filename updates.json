@@ -3,10 +3,10 @@
   "generated_at": "2026-07-15",
   "schema": "1.0.0",
   "plugins": {
-    "command-center": "0.8.0",
-    "compass": "0.3.1",
-    "ghostwriter": "0.1.1",
-    "outreach": "0.2.1",
+    "command-center": "0.8.1",
+    "compass": "0.3.2",
+    "ghostwriter": "0.1.2",
+    "outreach": "0.2.2",
     "capture": "0.2.0"
   }
 }
