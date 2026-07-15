@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Founders’ Brain. Coming soon.</title>
+<meta name="description" content="The Founders’ Brain: stop being your business's memory. Owned Memory in your own Notion, a brief every morning at 7:00. Coming soon.">
+<meta property="og:title" content="The Founders’ Brain. Coming soon.">
+<meta property="og:description" content="Stop being your business's memory. Owned Memory in your Notion, a brief every morning at 7:00. Coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thefoundersbrain.com/">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" hreflang="en" href="https://thefoundersbrain.com/">
+<link rel="alternate" hreflang="ro" href="https://creierulafacerii.ro/">
+<link rel="alternate" hreflang="x-default" href="https://thefoundersbrain.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='%230f0f0f' d='M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z'/%3E%3Cpath stroke='%23e8490e' d='M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z'/%3E%3Cpath stroke='%230f0f0f' d='M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,701,900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fafafa;
+    --ink:#0f0f0f;
+    --ink-soft:#2b2b2b;
+    --muted:#595551;
+    --line:#e8e3de;
+    --accent:#e8490e;
+    --accent-deep:#c93c05;
+    --accent-soft:rgba(232,73,14,.07);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font:17px/1.65 "Satoshi",system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    min-height:100vh;display:flex;flex-direction:column;
+    background-image:radial-gradient(rgba(15,15,15,.05) 1px, transparent 1.4px);
+    background-size:26px 26px;
+  }
+  ::selection{background:var(--accent);color:#fff}
+  .glow{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(620px 440px at 15% 12%, rgba(232,73,14,.07), transparent 70%),
+      radial-gradient(680px 460px at 88% 88%, rgba(232,73,14,.06), transparent 70%);}
+  .wrap{max-width:640px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+  header{padding:30px 0}
+  .logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .logo svg{flex:none}
+  .logo .wm b{display:block;font-size:17px;font-weight:900;letter-spacing:-.01em;line-height:1.15}
+  .logo .wm span{display:block;font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+
+  main{flex:1;display:flex;align-items:center;padding:32px 0 48px}
+  .badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent-deep);margin-bottom:22px;
+  }
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+  @media (prefers-reduced-motion: no-preference){.badge .dot{animation:pulse 2.4s ease-in-out infinite}}
+  @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(232,73,14,.5)}50%{opacity:.55;box-shadow:0 0 0 6px rgba(232,73,14,0)}}
+  h1{font-size:clamp(40px,8vw,76px);line-height:1.03;font-weight:700;letter-spacing:-.028em;max-width:11em}
+  h1 em{font-style:italic;color:var(--accent)}
+  .sub{max-width:34em;color:var(--muted);font-size:clamp(16px,2vw,19px);margin-top:24px}
+  .sub b{color:var(--ink);font-weight:700}
+
+  .points{list-style:none;margin:30px 0 0;display:flex;flex-direction:column;gap:12px}
+  .points li{display:flex;align-items:flex-start;gap:11px;font-size:16px;font-weight:700;color:var(--ink-soft)}
+  .points svg{color:var(--accent-deep);flex:none;margin-top:3px}
+  .points li span{font-weight:500;color:var(--muted)}
+
+  .cta{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:52px;padding:14px 26px;border-radius:999px;
+    font-size:16px;font-weight:700;text-decoration:none;white-space:nowrap;
+    background:var(--accent);color:#fff;
+    transition:transform .25s,box-shadow .25s;
+  }
+  .btn svg{flex:none}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(232,73,14,.55)}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+  .micro{font-size:14px;color:var(--muted);margin-top:14px;max-width:34em}
+
+  footer{padding:26px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+  footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+  @media (max-width:640px){footer .wrap{flex-direction:column;align-items:flex-start;gap:10px}}
+  footer a{color:var(--ink);text-decoration:none;font-weight:700}
+  footer a:hover{color:var(--accent-deep)}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="The Founders’ Brain">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path stroke="#0f0f0f" d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+        <path stroke="#e8490e" d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+        <path stroke="#0f0f0f" d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+        <path stroke="#0f0f0f" d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+        <path stroke="#e8490e" d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+        <path stroke="#0f0f0f" d="M6 18a4 4 0 0 1-1.967-.516"/>
+        <path stroke="#e8490e" d="M19.967 17.484A4 4 0 0 1 18 18"/>
+      </svg>
+      <span class="wm"><b>The Founders’ Brain</b><span>It remembers. It acts. It reports.</span></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="badge"><span class="dot"></span>Coming soon</p>
+    <h1>Stop being your business's memory. <em>Almost ready.</em></h1>
+    <p class="sub">The Founders’ Brain remembers every person, sale, idea and meeting, and acts on what it knows. Built on <b>Owned Memory</b>: everything lives in <b>your own Notion</b>, yours even if you walk away. It briefs you at <b>7:00</b> every morning. We're putting the final pieces in place.</p>
+
+    <ul class="points">
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg><div>Lives in your Notion. <span>Your data stays yours.</span></div></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg><div>Set up with you, over a few 1-on-1 sessions. <span>You work directly with me.</span></div></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg><div>Useful by the first morning. <span>Your first brief, at 7:00.</span></div></li>
+    </ul>
+
+    <div class="cta">
+      <a class="btn" href="mailto:razvan@smartfreedomstrategies.com?subject=Early%20access%20to%20The%20Founders%27%20Brain">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Get early access
+      </a>
+    </div>
+    <p class="micro">Write me and I'll tell you when it's ready. One email, answered by a human.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:var(--ink)">The Founders’ Brain</b> · By Razvan Popescu</div>
+    <div><a href="https://creierulafacerii.ro/" lang="ro" hreflang="ro">În română: creierulafacerii.ro</a></div>
+  </div>
+</footer>
+</body>
+</html>
