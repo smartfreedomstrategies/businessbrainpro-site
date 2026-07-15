@@ -1,4 +1,10 @@
-# Deploy on Cloudflare Pages — businessbrainpro.com
+# Deploy on Cloudflare Pages — thefoundersbrain.com
+
+> **Rebrand 2026-07-15 — what's left to do by hand (operator):**
+> 1. Buy/confirm `thefoundersbrain.com`, add it to Cloudflare, then Workers & Pages → `businessbrainpro-site` → Custom domains → **Set up a domain** → `thefoundersbrain.com` + `www.thefoundersbrain.com`.
+> 2. Once the new domain serves the site, uncomment the two 301 lines at the bottom of `_redirects` (old domain → new domain) and push.
+> 3. Create the `hello@thefoundersbrain.com` mailbox/alias before `full-page.html` goes to the front (its CTAs point there).
+> The Pages project itself keeps the name `businessbrainpro-site`; everything below documents the original old-domain deploy and still applies mechanically.
 
 Static site, a single `index.html`. Deployed from Git, like `razvanpopescu.com`. Any push to `main` → Cloudflare republishes on its own.
 

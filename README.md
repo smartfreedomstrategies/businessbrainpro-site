@@ -1,6 +1,8 @@
-# BusinessBrainPro.com: static site
+# TheFoundersBrain.com: static site
 
-The site for The Business Brain. Self-contained HTML files, Satoshi from Fontshare (CDN). No build, no local dependencies, no dashboard. Plain files.
+> **Rebrand 2026-07-15:** the product is now **The Founders' Brain** on **thefoundersbrain.com**. The GitHub repo and the Cloudflare Pages project keep the old name (`businessbrainpro-site`); only the served copy and the primary domain change. businessbrainpro.com stays attached and 301s to the new domain once it's wired (see `DEPLOY-cloudflare-pages.md`).
+
+The site for The Founders' Brain. Self-contained HTML files, Satoshi from Fontshare (CDN). No build, no local dependencies, no dashboard. Plain files.
 
 Deployed on **Cloudflare Pages** from Git, exactly like `razvanpopescu-site` and `creierulafacerii-site`. Any push to `main` republishes automatically.
 
@@ -9,7 +11,7 @@ Deployed on **Cloudflare Pages** from Git, exactly like `razvanpopescu-site` and
 Right now the domain serves a clean **"Coming soon" holding page**, with the full hero page kept as a reachable backup. The full page still has a few wordings to polish, so we show the tidy holding page in the meantime.
 
 - **`index.html`** = the "Coming soon" holding page (LIVE, what visitors see).
-- **`full-page.html`** = the full hero page (backup, reachable at `businessbrainpro.com/full-page.html`).
+- **`full-page.html`** = the full hero page (backup, reachable at `thefoundersbrain.com/full-page.html`).
 
 ### Swap the full page back to the front at launch
 When the full page is polished and ready to be the homepage:
@@ -25,7 +27,7 @@ Cloudflare republishes on push. (Keep `coming-soon-backup.html` around in case y
 
 ## Pre-launch notes
 
-- **Temporary email on the holding page.** The live `index.html` CTA points to `razvan@smartfreedomstrategies.com`, because `hello@businessbrainpro.com` is not a live mailbox yet and the holding page invites people to write NOW (a dead CTA loses those emails). **At launch: create `hello@businessbrainpro.com`, then change the `index.html` CTA back to it.** `full-page.html` already uses `hello@businessbrainpro.com`, so it needs the mailbox live before it goes to the front.
+- **Temporary email on the holding page.** The live `index.html` CTA points to `razvan@smartfreedomstrategies.com`, because `hello@thefoundersbrain.com` is not a live mailbox yet and the holding page invites people to write NOW (a dead CTA loses those emails). **At launch: create `hello@thefoundersbrain.com`, then change the `index.html` CTA back to it.** `full-page.html` already uses `hello@thefoundersbrain.com`, so it needs the mailbox live before it goes to the front.
 - The design origins live in the umbrella dev repo: `coming-soon.html` (holding page) and `the-business-brain.html` (full hero). Edits meant for the live site are made here and pushed. Do not let the copies drift.
 
 ## What's in the box
@@ -50,13 +52,13 @@ Cloudflare republishes on push. (Keep `coming-soon-backup.html` around in case y
 
 Any new push to GitHub republishes automatically.
 
-## The domain (businessbrainpro.com)
+## The domain (thefoundersbrain.com)
 
-1. In the Pages project, **Custom domains, Set up a domain**, enter `businessbrainpro.com`.
+1. In the Pages project, **Custom domains, Set up a domain**, enter `thefoundersbrain.com`.
 2. Cloudflare tells you which DNS record to add. Full details plus the email safety net are in `DEPLOY-cloudflare-pages.md` and `DNS-checklist-cloudflare.md`.
 3. HTTPS turns on by itself.
 
-Repeat for `www.businessbrainpro.com` if you want www to resolve too.
+Repeat for `www.thefoundersbrain.com` if you want www to resolve too. Keep `businessbrainpro.com` (+www) attached so the 301 redirect to the new domain keeps old links alive.
 
 ---
 

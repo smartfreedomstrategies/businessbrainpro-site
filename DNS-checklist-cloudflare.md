@@ -1,5 +1,7 @@
 # DNS checklist — businessbrainpro.com on Cloudflare
 
+> **Rebrand 2026-07-15:** the same checklist now applies to **thefoundersbrain.com** (new primary). Wire it as a second custom domain on the same Pages project `businessbrainpro-site`; keep the old domain's records intact so the 301 redirect keeps working. Email moves to `hello@thefoundersbrain.com` (MX/SPF on the NEW domain).
+
 ⚠️ **Template, not live data.** The values here are NOT known. **The first step is to read the current DNS** at the registrar where `businessbrainpro.com` lives and fill in the tables below before hitting "Continue to activation" in Cloudflare. Do NOT invent records.
 
 ## Find out first (you fill in)

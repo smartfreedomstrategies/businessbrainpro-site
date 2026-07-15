@@ -1,4 +1,4 @@
-# Cloudflare Pages redirects — businessbrainpro.com
+# Cloudflare Pages redirects — thefoundersbrain.com (businessbrainpro.com stays attached and 301s here)
 # Ecosystem infrastructure paths. One rule per line: <from> <to> <status>.
 #
 # /template is the STABLE redirect the Command Center skills ship (command-center-setup,
@@ -9,3 +9,8 @@
 
 /template         https://rose-spleen-e47.notion.site/Command-Center-Template-v1-aa145dba04ac8288af4481b047bf4f16   302
 /template-notion  https://rose-spleen-e47.notion.site/Command-Center-Template-v1-aa145dba04ac8288af4481b047bf4f16   302
+
+# Rebrand 2026-07-15: uncomment these two AFTER thefoundersbrain.com is attached and serving,
+# so old-domain links 301 to the new domain. Uncommenting them before that would black-hole the live site.
+# https://businessbrainpro.com/* https://thefoundersbrain.com/:splat 301
+# https://www.businessbrainpro.com/* https://thefoundersbrain.com/:splat 301
