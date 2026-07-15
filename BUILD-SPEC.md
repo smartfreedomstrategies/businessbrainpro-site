@@ -80,9 +80,11 @@ dotted texture. No redesign.
 - No email-capture form (one mailto CTA, answered by a human).
 - No testimonial section yet (no real proof; see proof plan).
 
-## Root flip (done 2026-07-15)
-The full landing page IS index.html; the coming-soon page is archived at
-coming-soon.html; /full-page(.html) 301s to /. Because the domain has no MX
-records yet, ALL CTAs point at razvan@smartfreedomstrategies.com (the address
-the coming-soon page already exposed). When the hello@thefoundersbrain.com
-mailbox exists, swap every occurrence in index.html back to hello@ and redeploy.
+## Root flip (done 2026-07-15, REVERTED same day, deliberately)
+Phase 1 runs with Anna on warm conversations, so the coming-soon page stays at
+the root and the full landing page lives at /full-page.html as the show-piece
+Razvan sends people to directly. Both pages carry the new copy. Flip the full
+page to the root later, when the Anna phase concludes AND the
+hello@thefoundersbrain.com mailbox exists (domain has no MX records yet; ALL
+full-page CTAs point at razvan@smartfreedomstrategies.com until then, then swap
+back to hello@ and redeploy).
