@@ -3,8 +3,8 @@
   "generated_at": "2026-07-16",
   "schema": "1.0.0",
   "plugins": {
-    "command-center": "0.9.2",
-    "compass": "0.3.5",
+    "command-center": "0.10.0",
+    "compass": "0.4.0",
     "ghostwriter": "0.1.4",
     "outreach": "0.2.4",
     "capture": "0.2.0"
