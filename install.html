@@ -112,6 +112,10 @@
     background:var(--accent-soft);border:1px solid rgba(232,73,14,.18);border-radius:8px;
     padding:6px 11px;line-height:1.5;
   }
+  .know{margin-top:12px;font-size:14px;color:var(--muted);line-height:1.55}
+  .know::before{content:"✓ ";color:var(--accent-deep);font-weight:900}
+  .know b{color:var(--ink);font-weight:900}
+  h3{font-size:17px;font-weight:900;letter-spacing:-.01em;margin:30px 0 8px}
   code{
     font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;
     background:rgba(15,15,15,.05);border-radius:5px;padding:1px 6px;color:var(--ink);
@@ -188,12 +192,54 @@
   <div class="wrap">
     <p class="badge"><span class="dot"></span>Welcome</p>
     <h1>Let's get your Founders’ Brain <em>set up</em>.</h1>
-    <p class="sub">This is the whole thing, start to finish, on one page. It all happens in the Claude desktop app (Cowork). Have a read before we talk so nothing is a surprise, then keep it to look back on.</p>
+    <p class="sub">This is the whole thing, start to finish, on one page. It all happens in the Claude desktop app (Cowork). Two parts: <b>the install</b> (about fifteen minutes, we do it together on our call) and <b>the brand interview</b> right after, where your Founders&rsquo; Brain learns your business (another fifteen to twenty, and it is a conversation, not a form). Have a read before we talk so nothing is a surprise, then keep it to look back on.</p>
 
     <div class="calm">
       <p><b>You do not have to do any of this alone.</b> We go through it together on our call, live, and it takes about fifteen minutes.</p>
       <p>And you cannot break anything. Nothing gets deleted, and every real change asks you first. If a step ever looks off, we just stop and sort it.</p>
     </div>
+
+    <h2>Before our call</h2>
+    <p class="lead">Five minutes of prep and the call itself is smooth. Three accounts, then a short list to have within reach.</p>
+    <ul class="gets">
+      <li>
+        <b>A Notion account</b>
+        <p>The free plan runs everything, and free is all you need. Sign up at <a href="https://www.notion.so" target="_blank" rel="noopener">notion.so</a> with your email or Google, and pick "for personal use" if it asks.</p>
+        <p class="know"><b>Ready when:</b> Notion opens and you see your sidebar.</p>
+      </li>
+      <li>
+        <b>Claude Pro</b>
+        <p>$20 a month, and the free plan will not work for this: plugins and Cowork need a paid plan. Sign up or log in at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>, then Settings, Billing, subscribe to Pro.</p>
+        <p class="know"><b>Ready when:</b> your account shows Pro.</p>
+      </li>
+      <li>
+        <b>The Claude desktop app</b>
+        <p>Download it at <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a> (Mac or Windows, the steps are identical), install it, and log in with the SAME account you just upgraded. The website and the phone app cannot do the setup.</p>
+        <p class="know"><b>Ready when:</b> Claude opens as its own app and you are signed in.</p>
+      </li>
+      <li>
+        <b>Your logins, within reach</b>
+        <p>The number one thing that stalls a setup is hunting for a password halfway through. Two minutes now saves the headache.</p>
+      </li>
+    </ul>
+
+    <h3>And for the interview, have these handy</h3>
+    <p class="lead">Right after the build, your Founders&rsquo; Brain interviews you about your business. Fifteen to twenty minutes, conversational, no wrong answers. It goes fastest when you have:</p>
+    <ul class="gets">
+      <li>
+        <b>A link to your website or your main social profile</b>
+        <p>Or any doc that describes your business. Give it that and it drafts most of your profile on its own; you just correct what it got wrong.</p>
+      </li>
+      <li>
+        <b>Your offers, with prices</b>
+        <p>Everything you sell, what each thing costs, and which one is the main offer right now.</p>
+      </li>
+      <li>
+        <b>An honest picture of where the business is today</b>
+        <p>The system shapes itself around the truth, not the ambition. Be honest about where you are TODAY.</p>
+      </li>
+    </ul>
+    <p class="more"><span><b>That is all the homework there is.</b> You talk, it writes.</span></p>
 
     <h2>What you're getting</h2>
     <p class="lead">One core system, plus add-ons that snap on when you want them. Each one is a single file that goes in the same way.</p>
@@ -227,6 +273,7 @@
       <li>
         <b>Create your Founders’ Brain project</b>
         <p>In the Claude desktop app, create a new <b>project</b> (Cowork calls them projects). Name it whatever you like. This is your home base: where your Founders’ Brain lives and where we work every session.</p>
+        <p>One thing worth knowing now: this is the <b>only</b> project you will ever create in the Claude app. Later you will hear a lot about projects for your launches, offers, and clients; those live in Notion, and your Founders’ Brain builds them for you. In the Claude app there is just this one home base.</p>
         <figure class="shot">
           <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
                <img src="assets/shot-1-new-project.png" alt="The new-project screen in the Claude desktop app"> -->
@@ -236,6 +283,7 @@
             <span>The new-project screen in the Claude desktop app. Creating a project gives your Founders’ Brain a home base that loads your instructions every time you open a chat.</span>
           </div>
         </figure>
+        <p class="know"><b>You'll know it worked when</b> the project shows up in the sidebar and opens to a fresh, empty chat.</p>
       </li>
       <li>
         <b>Copy your Notion template</b>
@@ -244,6 +292,7 @@
           <img src="assets/shot-2-duplicate.png" alt="The Command Center template page in Notion">
           <figcaption>The template you land on. To copy it, click <b>Duplicate</b>, the icon at the top right of the page.</figcaption>
         </figure>
+        <p class="know"><b>You'll know it worked when</b> a page called <b>Command Center — Template</b> appears in your own Notion sidebar.</p>
       </li>
       <li>
         <b>Let Claude see your Notion</b>
@@ -257,10 +306,12 @@
             <span>The Notion connector's Allow screen. Clicking Allow is what lets your Founders’ Brain read and build inside your Notion, and nowhere else. Blur anything personal.</span>
           </div>
         </figure>
+        <p class="know"><b>You'll know it worked when</b> Notion shows as connected in your Connectors list.</p>
       </li>
       <li>
         <b>Get your files from me</b>
         <p>I send everything to you directly: your plugins (the core, plus any add-ons you have) and one <b>instructions file</b>. Save them somewhere you can find them (your Downloads folder is fine).</p>
+        <p class="know"><b>You'll know it worked when</b> you can see the plugin file (or files) and one instructions file in your Downloads.</p>
       </li>
       <li>
         <b>Add each plugin in the Claude desktop app</b>
@@ -293,6 +344,7 @@
             <span>Your plugins listed as installed. Confirms they loaded and are ready to use.</span>
           </div>
         </figure>
+        <p class="know"><b>You'll know it worked when</b> each one appears in your Personal plugins list.</p>
       </li>
       <li>
         <b>Paste in your instructions</b>
@@ -306,6 +358,7 @@
             <span>The project's Instructions field with your instructions pasted in. This is the playbook that loads itself every session.</span>
           </div>
         </figure>
+        <p class="know"><b>You'll know it worked when</b> you reopen Instructions and your pasted text is still there.</p>
       </li>
       <li>
         <b>Restart the app</b>
@@ -323,8 +376,45 @@
             <span>A fresh chat right after you say <code>set up my command center</code>. This wakes the system up and starts building with you.</span>
           </div>
         </figure>
+        <p class="know"><b>You'll know it worked when</b> it answers by asking for your business name and your first name. That is it waking up.</p>
       </li>
     </ol>
+
+    <h2>What happens when you say it</h2>
+    <p class="lead">The play-by-play after "set up my command center", so nothing on the call feels surprising.</p>
+    <ol class="steps">
+      <li>
+        <b>Two quick questions</b>
+        <p>Your business name and your first name. That is all the typing in the whole build.</p>
+      </li>
+      <li>
+        <b>A taste while it works</b>
+        <p>It offers to look at your website (or one sentence about what you do) and reflects your business back at you while the build runs. Say yes; it also makes the interview faster later.</p>
+      </li>
+      <li>
+        <b>It checks your copy of the template came in clean</b>
+        <p>And quietly repairs the small things Notion sometimes bends when a page gets duplicated. You will not see this part; it just happens.</p>
+      </li>
+      <li>
+        <b>It makes the workspace yours</b>
+        <p>Your brand on the title, your seven zones labeled, a few welcome entries so nothing opens looking dead.</p>
+      </li>
+      <li>
+        <b>It switches on your automatic reports</b>
+        <p>The morning brief every day at 7, a who-is-going-cold check on Mondays, and two Friday reports (the patterns in your ideas, and the weekly recap). Your first report lands tomorrow morning.</p>
+      </li>
+      <li>
+        <b>Then the brand interview, straight away</b>
+        <p>Fifteen to twenty minutes of conversation about who you serve, what you sell, and how you sound. This is what the prep list at the top of this page is for.</p>
+      </li>
+      <li>
+        <b>And the finale</b>
+        <p>It builds you one real, branded asset you can use the same day. That is the moment it clicks.</p>
+      </li>
+    </ol>
+    <div class="calm">
+      <p><b>The build itself takes six to eight minutes</b> and it narrates while it works. If it asks you something mid-run, that is normal and good. Answer in plain English. There is no wrong answer.</p>
+    </div>
 
     <h2>Already set up? Adding an add-on or re-installing</h2>
     <p class="lead">If your Founders’ Brain is already running and you just need to add an add-on (or re-load a plugin after an update), skip everything above. It is three quick steps, no re-doing Notion.</p>
@@ -355,8 +445,32 @@
         <p>Make sure you are on the latest Claude desktop app and uploading the <code>.plugin</code> file exactly as I sent it (not unzipped, not renamed). If it still refuses, send me a screenshot and I will sort it.</p>
       </li>
       <li>
+        <b>It says it can't find your template</b>
+        <p>The duplicate did not happen, or it landed under an odd name. Open Notion, copy the link of the template page in your sidebar, paste it into the chat and say "here's my template". It takes it from there.</p>
+      </li>
+      <li>
+        <b>It's building, but nothing shows up in Notion</b>
+        <p>Almost always the permission popups: click Allow when Claude asks to write to Notion (there is an option so it stops asking every time). And double-check Notion is connected with the same account you duplicated the template into.</p>
+      </li>
+      <li>
         <b>The app won't open, or it's running slow</b>
         <p>That is before your Founders’ Brain is even involved. Restart the app, and your computer if it is sluggish, update to the latest version, then try step 5 again.</p>
+      </li>
+    </ul>
+
+    <h2>Quick answers</h2>
+    <ul class="rescue">
+      <li>
+        <b>Do I have to pay for Notion?</b>
+        <p>No. The free plan runs the entire system for one person. The only subscription is Claude Pro.</p>
+      </li>
+      <li>
+        <b>Do I need Notion AI?</b>
+        <p>No, skip it. Your Founders’ Brain does the thinking, and it works better than the built-in one. Save the money.</p>
+      </li>
+      <li>
+        <b>Why does it feel slower or flatter some days?</b>
+        <p>Usually the chat just got very long. Open a fresh chat inside your project and say "catch me up". You lose nothing: your system's memory lives in Notion, not in the chat.</p>
       </li>
     </ul>
 
