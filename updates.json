@@ -1,12 +1,12 @@
 {
   "product": "The Founders' Brain",
   "generated_at": "2026-07-20",
-  "schema": "1.0.0",
+  "schema": "1.2.0",
   "plugins": {
-    "command-center": "0.14.0",
-    "compass": "0.4.3",
-    "ghostwriter": "0.2.0",
-    "outreach": "0.3.0",
-    "capture": "0.2.0"
+    "command-center": "0.15.2",
+    "compass": "0.4.4",
+    "ghostwriter": "0.2.3",
+    "outreach": "0.3.1",
+    "capture": "0.2.1"
   }
 }
