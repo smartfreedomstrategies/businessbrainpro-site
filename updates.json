@@ -1,9 +1,9 @@
 {
   "product": "The Founders' Brain",
-  "generated_at": "2026-07-22",
+  "generated_at": "2026-07-23",
   "schema": "1.2.0",
   "plugins": {
-    "command-center": "0.15.3",
+    "command-center": "0.15.4",
     "compass": "0.4.4",
     "ghostwriter": "0.2.3",
     "outreach": "0.3.2",
