@@ -3,7 +3,7 @@
   "generated_at": "2026-09-17",
   "schema": "1.4.0",
   "plugins": {
-    "command-center": "0.19.0",
+    "command-center": "0.20.0",
     "compass": "0.6.0",
     "ghostwriter": "0.5.0",
     "outreach": "0.7.0",
