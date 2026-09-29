@@ -6,33 +6,19 @@ The site for The Founders' Brain. Self-contained HTML files, Satoshi from Fontsh
 
 Deployed on **Cloudflare Pages** from Git, exactly like `razvanpopescu-site` and `creierulafacerii-site`. Any push to `main` republishes automatically.
 
-## Current state: coming-soon page in front
+## Current state: the full page is the homepage (since 2026-09-29)
 
-Right now the domain serves a clean **"Coming soon" holding page**, with the full hero page kept as a reachable backup. The full page still has a few wordings to polish, so we show the tidy holding page in the meantime.
-
-- **`index.html`** = the "Coming soon" holding page (LIVE, what visitors see).
-- **`full-page.html`** = the full hero page (backup, reachable at `thefoundersbrain.com/full-page.html`).
-
-### Swap the full page back to the front at launch
-When the full page is polished and ready to be the homepage:
-
-```
-git mv index.html coming-soon-backup.html
-git mv full-page.html index.html
-git add -A && git commit -m "Launch: full hero page to the front"
-git push
-```
-
-Cloudflare republishes on push. (Keep `coming-soon-backup.html` around in case you want the holding page again later.)
-
-## Pre-launch notes
-
-- **Temporary email on the holding page.** The live `index.html` CTA points to `razvan@smartfreedomstrategies.com`, because `hello@thefoundersbrain.com` is not a live mailbox yet and the holding page invites people to write NOW (a dead CTA loses those emails). **At launch: create `hello@thefoundersbrain.com`, then change the `index.html` CTA back to it.** `full-page.html` already uses `hello@thefoundersbrain.com`, so it needs the mailbox live before it goes to the front.
-- The design origins live in the umbrella dev repo: `coming-soon.html` (holding page) and `the-business-brain.html` (full hero). Edits meant for the live site are made here and pushed. Do not let the copies drift.
+- **`index.html`** = the full landing page (LIVE at the root).
+- **`coming-soon-backup.html`** = the old holding page, kept with `noindex` in case it is ever needed again.
+- `/full-page` and `/full-page.html` 301 to the root (`_redirects`), so links sent during the warm-intro phase keep working.
+- **Contact:** every CTA is a mailto to `razvan@razvanpopescu.com` (Google mail, receives). No address is shown as text. `thefoundersbrain.com` has no MX, so no `hello@` address is used.
+- The design origins in the umbrella dev repo (`coming-soon.html`, `the-business-brain.html`) are historical. This repo is the source of truth for the live copy.
 
 ## What's in the box
-- `index.html` — the live "Coming soon" holding page
-- `full-page.html` — the full hero page (backup)
+- `index.html`: the live landing page
+- `coming-soon-backup.html`: the old holding page (noindex)
+- `install.html`: the install and rescue page
+- `_redirects`: /template, /template-notion, /full-page
 - `DEPLOY-cloudflare-pages.md` — the Cloudflare Pages deploy steps
 - `DNS-checklist-cloudflare.md` — a DNS verification template to fill in before attaching the domain
 - `README.md` — this file

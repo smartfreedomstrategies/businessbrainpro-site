@@ -14,3 +14,7 @@
 # feature and are silently ignored here). It lives as a Redirect Rule on the businessbrainpro.com zone:
 # dashboard -> businessbrainpro.com -> Rules -> Redirect Rules -> "All incoming requests" ->
 # dynamic redirect to concat("https://thefoundersbrain.com", http.request.uri.path), 301, preserve query string.
+
+# Launch 2026-09-29: the full page moved to the root. Links already sent to /full-page keep working.
+/full-page        /   301
+/full-page.html   /   301
