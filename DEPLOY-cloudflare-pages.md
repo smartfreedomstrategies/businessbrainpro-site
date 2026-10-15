@@ -1,5 +1,7 @@
 # Deploy on Cloudflare Pages — thefoundersbrain.com
 
+> **Live hosting verified 15 October 2026:** GitHub reports this existing deployment as **Workers Builds: businessbrainpro-site**, despite the historical Pages instructions below. Hosting and DNS have not been migrated. `wrangler.jsonc` preserves Cloudflare’s existing generated configuration and enables `assets.not_found_handling: "404-page"` so missing URLs serve the branded error page with HTTP 404.
+
 > **Rebrand 2026-07-15 — what's left to do by hand (operator):**
 > 1. Buy/confirm `thefoundersbrain.com`, add it to Cloudflare, then Workers & Pages → `businessbrainpro-site` → Custom domains → **Set up a domain** → `thefoundersbrain.com` + `www.thefoundersbrain.com`.
 > 2. Once the new domain serves the site, add the old-domain 301 as a **Redirect Rule** on the `businessbrainpro.com` zone (NOT in `_redirects`; Pages ignores host-based sources there): dashboard → businessbrainpro.com → Rules → Redirect Rules → create rule → match **All incoming requests** → **Dynamic** redirect → expression `concat("https://thefoundersbrain.com", http.request.uri.path)` → status **301** → tick **Preserve query string**.

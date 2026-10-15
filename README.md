@@ -1,5 +1,7 @@
 # TheFoundersBrain.com: static site
 
+> **Live hosting verified 15 October 2026:** GitHub reports this existing deployment as **Workers Builds: businessbrainpro-site**, despite the historical Pages instructions below. Hosting and DNS have not been migrated. `wrangler.jsonc` preserves Cloudflare’s existing generated configuration and enables `assets.not_found_handling: "404-page"` so missing URLs serve the branded error page with HTTP 404.
+
 > **Rebrand 2026-07-15:** the product is now **The Founders' Brain** on **thefoundersbrain.com**. The GitHub repo and the Cloudflare Pages project keep the old name (`businessbrainpro-site`); only the served copy and the primary domain change. businessbrainpro.com stays attached and 301s to the new domain once it's wired (see `DEPLOY-cloudflare-pages.md`).
 
 The site for The Founders' Brain. Self-contained HTML files, Satoshi from Fontshare (CDN). No build, no local dependencies, no dashboard. Plain files.
