@@ -23,10 +23,10 @@ Static site, a single `index.html`. Deployed from Git, like `razvanpopescu.com`.
 4. **Save and Deploy**
 5. In ~30 sec you get a `https://businessbrainpro-site.pages.dev` link
 6. **Test there first.** Open it and check:
-   - the hero counters (7, 25, 4) animate on scroll; "7:00" is fixed
+   - the hero counters (7 zones, 25 trackers, 3 optional core reports) animate on scroll; "7:00" is labeled as a default
    - every section is visible after load — even without scrolling, everything appears within ~1.5s (the reveal is fail-open with a hard backstop)
    - the language switcher "Română" goes to creierulafacerii.ro
-   - the "Install the Brain" buttons open an email to `hello@businessbrainpro.com`
+   - the "Let’s talk" buttons open an email to `razvan@razvanpopescu.com`; the installation guide links to `/install`
    - the favicon shows in the tab
    - no horizontal scroll at desktop (1280px) or mobile (375px)
    If it looks right → move on.

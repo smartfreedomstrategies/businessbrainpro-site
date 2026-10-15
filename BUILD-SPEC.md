@@ -1,3 +1,13 @@
+# Current alignment note, 15 October 2026
+
+The shipped kit and tested behavior supersede the older timing and installation copy below. Keep the visual design, headline, guided-service offer and contact CTA. Support both Claude Cowork and Codex; technical setup precedes chosen onboarding. Reports require approved schedules, supported tools and access. 07:00 is a configurable default, not an exact delivery promise. Do not restore the old claims about hourly query resets, forced local execution, automatic catch-up, instant repairs or all trackers maintaining themselves.
+
+## Offer audit copy pass, 15 October 2026 (unpublished)
+
+The local page now names the solo-expert audience, narrows the ownership and maintenance wording, and uses a clearly labeled meeting-to-task example. Previous AI work is a builder credential; the client location and unverified days-to-hours outcome figure are omitted at the user’s request. Keep the headline, design, email CTA and custom-quote model. Scope is agreed before commitment, including plugins/workflows, setup/onboarding and any support. No fixed price, session count, completion guarantee or support entitlement has been added. This pass changes copy only and does not authorize deployment.
+
+The historical creative brief follows for design and positioning context.
+
 # The Founders' Brain — landing page build spec
 Locked 2026-07-15. Source of truth for full-page.html and index.html copy.
 Session: rebrand follow-up (thefoundersbrain.com), copy sharpening pass, no visual redesign.

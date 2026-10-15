@@ -4,13 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Founders’ Brain: stop being your business's memory</title>
-<meta name="description" content="Stop being your business's memory. The Founders’ Brain remembers every person, sale, idea and meeting in your own Notion, acts on what it knows, and briefs you at 7:00 every morning.">
+<meta name="description" content="Your business memory in your own Notion. Use Founders’ Brain with Claude Cowork or Codex to capture work, draft content, track goals and prepare reports you choose.">
 <meta property="og:title" content="The Founders’ Brain: stop being your business's memory">
-<meta property="og:description" content="Stop being your business's memory. Owned Memory in your own Notion, action on your numbers, a brief at 7:00 every morning.">
+<meta property="og:description" content="Your business memory in your own Notion, with Claude Cowork or Codex. Shared setup, personal onboarding and reports on your schedule.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://thefoundersbrain.com/assets/notion-cover-tfb-dark.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="3000">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="The Founders’ Brain: a memory for your business in your own Notion.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thefoundersbrain.com/assets/notion-cover-tfb-dark.png">
+<meta name="twitter:image:alt" content="The Founders’ Brain: a memory for your business in your own Notion.">
 <meta property="og:url" content="https://thefoundersbrain.com/">
 <link rel="canonical" href="https://thefoundersbrain.com/">
-<meta name="twitter:card" content="summary">
 <link rel="alternate" hreflang="en" href="https://thefoundersbrain.com/">
 <link rel="alternate" hreflang="ro" href="https://creierulafacerii.ro/">
 <link rel="alternate" hreflang="x-default" href="https://thefoundersbrain.com/">
@@ -44,7 +51,7 @@
     font:17px/1.65 "Satoshi",system-ui,-apple-system,sans-serif;
     -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
-  ::selection{background:var(--accent);color:#fff}
+  ::selection{background:var(--accent-deep);color:#fff}
 
   /* ---------- shared ---------- */
   .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
@@ -94,7 +101,7 @@
   .btn-dark:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(15,15,15,.45)}
   .btn-light{background:#fff;color:var(--ink-soft);border:1px solid var(--line)}
   .btn-light:hover{border-color:#cfc8c1;transform:translateY(-2px)}
-  .btn-accent{background:var(--accent);color:#fff}
+  .btn-accent{background:var(--accent-deep);color:#fff}
   .btn-accent:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(232,73,14,.55)}
   .btn-ghost-dark{border:1px solid var(--dark-line);color:var(--dark-text);background:transparent}
   .btn-ghost-dark:hover{border-color:var(--accent);color:var(--accent-bright)}
@@ -134,7 +141,8 @@
     .lang .short{display:inline}
   }
   @media (max-width:480px){
-    header .wrap{padding:0 16px}
+    header{height:auto;min-height:76px}
+    header .wrap{padding:10px 16px;flex-wrap:wrap;gap:10px}
     .logo{gap:9px}
     .logo .wm b{font-size:15px}
     .lang svg{display:none}
@@ -220,7 +228,7 @@
   .modcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s}
   .modcard:hover{transform:translateY(-5px);box-shadow:0 22px 48px -26px rgba(15,15,15,.25);border-color:#d9d2cb}
   .modcard.corewide{grid-column:1/4;flex-direction:row;align-items:center;gap:30px;background:linear-gradient(120deg,#fff, #fdf3ed);flex-wrap:wrap}
-  .modcard.corewide .body{flex:1;min-width:260px}
+  .modcard.corewide .body{flex:1;min-width:0}
   .modcard .ic{width:48px;height:48px;border-radius:13px;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;margin-bottom:18px;flex:none}
   .modcard.corewide .ic{width:56px;height:56px;margin-bottom:0}
   .modcard h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
@@ -340,9 +348,19 @@
   @media (max-width:640px){footer .wrap{flex-direction:column;align-items:flex-start;gap:10px}}
   footer a{color:var(--dark-text);text-decoration:none;font-weight:700}
   footer a:hover{color:var(--accent-bright)}
+
+  /* Keyboard access and reduced-motion preferences. */
+  .skip-link{position:absolute;left:16px;top:8px;z-index:100;background:#0f0f0f;color:#fff;padding:10px 16px;border-radius:8px;transform:translateY(-180%)}
+  .skip-link:focus{transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .btn:hover,.corecard:hover,.modcard:hover{transform:none}
+  }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <!-- ============ HEADER ============ -->
 <header>
@@ -373,18 +391,18 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
 
 <!-- ============ HERO ============ -->
 <section id="hero" class="texture glow" aria-label="Introduction">
   <div class="wrap">
-    <p class="eyebrow" style="justify-content:center">Remembers · Acts · Reports back</p>
+    <p class="eyebrow" style="justify-content:center">For consultants, coaches and solo experts</p>
     <h1>Stop being your<br>business's <em>memory.</em></h1>
-    <p class="sub">The Founders’ Brain remembers every person, sale, idea and meeting, and acts on what it knows. Built on <b>Owned Memory</b>: everything lives in <b>your own Notion</b>, not on our platform. Cancel tomorrow and it's still yours. And at <b>7:00 every morning</b>, it briefs you before your first coffee.</p>
+    <p class="sub">The Founders’ Brain helps you capture people, sales, ideas and meetings, then act on what you know. Built on <b>Owned Memory</b>: your business records live in <b>your own Notion</b>, under your control. Use it with <b>Claude Cowork or Codex</b>, and choose the reports that help you start your day.</p>
     <ul class="checks">
-      <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Yours forever. It lives in your Notion</li>
+      <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Your saved records stay in your Notion</li>
       <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Set up with you, over a few 1-on-1 sessions</li>
-      <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Useful by the first morning</li>
+      <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Setup first. Onboarding when you’re ready</li>
     </ul>
     <div class="cta-row">
       <a class="btn btn-dark" href="mailto:razvan@razvanpopescu.com?subject=Let%27s%20talk%20about%20The%20Founders%27%20Brain">
@@ -395,13 +413,13 @@
     </div>
     <p class="micro">One email starts it. If it's not a fit for your business, you'll hear that too, just as straight.</p>
 
-    <p class="proof">Built by Razvan Popescu: 21 years in marketing and sales, 11 of them in pharma, where a careless message costs something real. His last AI build took a New York firm from <b>days of manual work to hours per client</b>.</p>
+    <p class="proof">Built by Razvan Popescu: 21 years in marketing and sales, 11 of them in pharma, where a careless message costs something real. His previous client work includes <b>four AI systems</b>.</p>
 
     <div class="stats">
       <div class="stat"><div class="n"><span data-count="7">7</span></div><div class="t">Zones</div></div>
       <div class="stat"><div class="n"><span data-count="25">25</span></div><div class="t">Trackers</div></div>
-      <div class="stat"><div class="n"><span data-count="3">3</span></div><div class="t">Automations</div></div>
-      <div class="stat"><div class="n"><i>7:00</i></div><div class="t">The daily brief</div></div>
+      <div class="stat"><div class="n"><span data-count="3">3</span></div><div class="t">Core reports to choose</div></div>
+      <div class="stat"><div class="n"><i>7:00</i></div><div class="t">Default brief time</div></div>
     </div>
   </div>
 </section>
@@ -410,7 +428,7 @@
 <section id="problem" class="pad tint" aria-label="The problem">
   <div class="wrap">
     <p class="eyebrow rev">The part nobody says out loud</p>
-    <p class="big rev">Somewhere along the way, you became the employee of your own company. The one who remembers everything: every follow-up, every idea, every client going quiet. <em>And everything you forget costs money.</em></p>
+    <p class="big rev">Somewhere along the way, you became the employee of your own company. The one who remembers everything: every follow-up, every idea, every client going quiet. <em>A missed follow-up can mean a missed opportunity.</em></p>
     <p class="kick rev">You don't have a productivity problem. <b>You have a memory problem.</b></p>
   </div>
 </section>
@@ -423,20 +441,20 @@
     <div class="isnt">
       <div class="card rev">
         <span class="no"><span class="x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Not another app</span>
-        <p>You already have too many tabs open. The Brain reports to you. You never log in to check on it.</p>
+        <p>You already have too many tabs open. Use your chosen AI app to work with it, and let approved reports bring you the updates.</p>
       </div>
       <div class="card rev">
         <span class="no"><span class="x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Not a course</span>
-        <p>No lessons, no modules to watch, no "implementation" homework. You watch nothing on your own: we set it up together, live, on your business.</p>
+        <p>The kit gives you a clear checklist for installation, setup and onboarding. We can work through it together on your business.</p>
       </div>
       <div class="card rev">
         <span class="no"><span class="x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Not a template you babysit</span>
-        <p>You've tried that, and quit maintaining it. Here the AI does the upkeep. You just talk.</p>
+        <p>You've tried that, and quit maintaining it. Your assistant helps file, link and update the work you bring it. You stay in control of what gets saved.</p>
       </div>
     </div>
     <div class="is-line rev">
       <span class="yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
-      <p>It's <b>a memory for your business that runs itself</b>: set up with you in a few sessions, living in your own Notion, working in your voice.</p>
+      <p>It's <b>a shared memory for your business</b>: set up with you, living in your own Notion, ready for the work you bring to it.</p>
     </div>
   </div>
 </section>
@@ -451,7 +469,7 @@
       <div class="corecard rev">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg></span>
         <h3>It <em>listens</em>. You just talk.</h3>
-        <p><span class="q">“Just signed Maria for the spring campaign.”</span> That one sentence becomes a client record, a project link, a next step on their record and a log entry, filed in the right trackers, <b>without you touching a single database.</b></p>
+        <p><span class="q">For example: “Here are my meeting notes. Save the decisions and my next action.”</span> Your assistant checks the details, saves the recap and links the task. Later, ask what’s due and return to that task with the meeting context attached. <b>The next step has a record you can come back to.</b></p>
       </div>
       <div class="corecard rev">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
@@ -461,12 +479,12 @@
       <div class="corecard rev">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></span>
         <h3>It <em>reports</em> before you ask.</h3>
-        <p>7:00 sharp, every morning: what's due, what moved, who's cooling off, and <b>yesterday's best idea, picked and pitched back to you.</b> Friday: the pattern synthesis, the themes your mind keeps returning to.</p>
+        <p>Choose a morning brief for what's due, what moved and <b>an idea worth revisiting.</b> Add the Friday pattern synthesis and weekly recap if you want them. Setup confirms the times, permissions and tools needed to run them.</p>
       </div>
       <div class="corecard rev">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></span>
-        <h3>It <em>knows you</em> from day one.</h3>
-        <p>A guided brand interview teaches it your voice, your customer, your offers and your rules. Then the import: <b>your last two years of sales history, loaded on the first day.</b> It starts smart, not blank.</p>
+        <h3>It <em>learns</em> your business.</h3>
+        <p>A guided brand interview teaches it your voice, your customer, your offers and your rules. Then bring the sales history you want to work with. <b>Your information gives the system its context.</b></p>
       </div>
     </div>
 
@@ -487,19 +505,19 @@
         <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384z"/></svg></span>
         <div class="sn">Step 1 of 3</div>
         <h3>A short call</h3>
-        <p>15-20 minutes. We figure out together whether it's a fit for your business. No pitch.</p>
+        <p>15-20 minutes. Bring one piece of work you keep having to remember or chase. We figure out whether the Brain can help and what setting it up would involve.</p>
       </div>
       <div class="step rev">
         <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span>
         <div class="sn">Step 2 of 3</div>
-        <h3>The guided sessions</h3>
-        <p>1-on-1, on your real business. You bring the context, I set it up, until it runs.</p>
+        <h3>Install and set up</h3>
+        <p>Open the kit’s Start Here guide, choose Claude Cowork or Codex, and prepare your own Notion copy. One shared setup prompt handles the plugins you have and skips the others.</p>
       </div>
       <div class="step rev">
         <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></span>
         <div class="sn">Step 3 of 3</div>
-        <h3>Your morning brief</h3>
-        <p>At 7:00, every day. From here on, it works while you don't.</p>
+        <h3>Make it yours</h3>
+        <p>Then choose onboarding: your brand, writing voice, first goal or relationships. We reuse what you have already shared. Reports run on the schedule you approve.</p>
       </div>
     </div>
     <div class="start-cta rev">
@@ -528,7 +546,7 @@
       <div class="gatecard rev">
         <div class="gstep">Not a fit / 03</div>
         <h3>You won't keep anything in Notion.</h3>
-        <p>The AI does the upkeep, but the memory has to live somewhere, and that somewhere is <b>your</b> Notion. No Notion, no Brain.</p>
+        <p>Your assistant helps with the upkeep, but the records need a home in <b>your</b> Notion. You still bring it the work and review the results.</p>
       </div>
     </div>
     <p class="gate-foot rev">If none of these are you, <em>let's go.</em></p>
@@ -539,13 +557,14 @@
 <section id="day" class="pad tint" aria-label="A day with the Brain">
   <div class="wrap">
     <p class="eyebrow rev">A day with the Brain</p>
-    <h2 class="rev">It works<br>while you don't.</h2>
+    <h2 class="rev">A clearer start.<br>A useful record.</h2>
     <div class="timeline">
-      <div class="tick rev"><time>07:00 · Every day</time><h3>The Morning Brief arrives.</h3><p>Due today, what moved yesterday, who's cooling off (leads silent 14+ days, clients quiet 30+), plus <b>one idea from yesterday, picked and pitched for refinement.</b> You open your day already oriented. Laptop was shut at seven? It runs the moment you open it, so it is <b>waiting for you</b> either way.</p></div>
-      <div class="tick rev"><time>All day</time><h3>You talk. It files.</h3><p>New client on a call, an idea in traffic, a sale confirmed: one sentence from you (desktop or phone) and it lands in the right tracker, linked to the right project.</p></div>
-      <div class="tick rev"><time>Fri 15:30</time><h3>The pattern synthesis.</h3><p>Four weeks of your captured ideas, clustered into themes: <b>what your mind keeps returning to</b>, which is where your next offer usually hides.</p></div>
-      <div class="tick rev"><time>Fri 17:00</time><h3>The weekly recap.</h3><p>Wins, stalls, content pipeline, new people: the week closed with a clear picture, not a vague feeling.</p></div>
+      <div class="tick rev"><time>07:00 · Default, if enabled</time><h3>The Morning Brief arrives.</h3><p>Due today, what moved yesterday and <b>one captured idea worth developing.</b> With Outreach, it can include the relationships that need attention. The brief uses the records it can read and tells you when something is missing.</p></div>
+      <div class="tick rev"><time>All day</time><h3>You talk. It files.</h3><p>Bring a client update, idea, sale or meeting to your assistant. It helps save it in the right tracker. The included Claude Inbox instructions provide a separate phone capture route.</p></div>
+      <div class="tick rev"><time>Fri 15:30 · Default, if enabled</time><h3>The pattern synthesis.</h3><p>Four weeks of your captured ideas, clustered into themes: <b>what your mind keeps returning to</b>, which is where your next offer usually hides.</p></div>
+      <div class="tick rev"><time>Fri 17:00 · Default, if enabled</time><h3>The weekly recap.</h3><p>Wins, stalls, content pipeline, new people: the week closed with a clear picture, not a vague feeling.</p></div>
     </div>
+    <p class="lead rev">You choose the times during setup. Remote Cowork reports can run without your computer; local tasks or tasks needing local files may need it on. Codex setup checks the tools available in your session. Delivery times are targets, and you can always ask “catch me up” for a fresh read.</p>
   </div>
 </section>
 
@@ -554,7 +573,7 @@
   <div class="wrap">
     <p class="eyebrow rev">Where the memory lives</p>
     <h2 class="rev">Owned Memory,<br>living in your Notion.</h2>
-    <p class="lead rev">Everything the Brain knows lives in <strong>your own Notion account, under your control</strong>. No middleman platform, no export hostage. Seven zones. Twenty-five interconnected trackers. Every person, sale, idea and meeting: filed, linked, remembered.</p>
+    <p class="lead rev">Your saved business records live in <strong>your own Notion account, under your control</strong>. Seven zones and twenty-five master trackers keep people, sales, ideas and meetings connected. Your chosen AI app also holds its chats and local drafts.</p>
 
     <div class="bento">
       <div class="cell hero-cell rev">
@@ -572,7 +591,7 @@
       <div class="cell rev">
         <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
         <h3>Marketing</h3>
-        <p>Every content idea caught the moment you have it, tracked from spark to published. With Ghostwriter, each piece also carries its score and what it actually did.</p>
+        <p>Capture ideas and track pieces from draft to published. With Ghostwriter, ask to save an approved draft into Content Capture in Marketing. Publishing remains a separate action.</p>
         <div class="tr">Content Capture</div>
       </div>
       <div class="cell rev">
@@ -584,7 +603,7 @@
       <div class="cell rev">
         <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></span>
         <h3>Meetings</h3>
-        <p>Every call logged with decisions, owners and action items, transcript attached.</p>
+        <p>Bring a transcript or notes to save a meeting with decisions, owners and linked tasks. Repeating the same save reuses matching records.</p>
         <div class="tr">Meetings · linked tasks</div>
       </div>
       <div class="cell rev">
@@ -596,7 +615,7 @@
       <div class="cell rev">
         <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span>
         <h3>Self</h3>
-        <p>The founder is part of the system: goals, habits and daily energy, next to the business. With Compass, they keep score on their own: say what you did and the streak moves.</p>
+        <p>The founder is part of the system: goals, habits and daily energy, next to the business. With Compass, log what you did and review your progress, pace and habit streaks.</p>
         <div class="tr">Life Goals · Habits · Daily Log</div>
       </div>
     </div>
@@ -608,7 +627,7 @@
   <div class="wrap">
     <p class="eyebrow rev">We shape it to your business, together</p>
     <h2 class="rev">One brain.<br>Specialized lobes.</h2>
-    <p class="lead rev">Modules dock onto the core and share its memory: no copies, no sync, no second system. In the sessions, we set up together only the lobes your business needs. You configure nothing on your own.</p>
+    <p class="lead rev">Add-ons use the same Notion copy and shared brand context. One setup prompt prepares the plugins you have. Then choose the onboarding you need, with guidance at each step.</p>
 
     <div class="modgrid">
       <div class="modcard corewide rev">
@@ -616,7 +635,7 @@
         <div class="body">
           <span class="tag">The core: everyone starts here</span>
           <h3>Command Center<span>your memory</span></h3>
-          <p>Your Notion becomes the business's memory: <b>25 trackers in 7 zones, 16 skills, 3 automations</b>, set up with you over a few guided sessions, with quick capture from your phone (the Inbox) included.</p>
+          <p>Your Notion becomes the business's memory: <b>25 trackers in 7 zones, 16 skills and 3 optional core reports</b>, set up with you over a few guided sessions, with quick capture from your phone (the Inbox) included.</p>
         </div>
         <div class="chips"><i>Set up with you</i><i>Morning brief</i><i>Money engines</i><i>Health check</i></div>
       </div>
@@ -624,19 +643,19 @@
       <div class="modcard rev">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></span>
         <h3>Compass<span>your direction</span></h3>
-        <p>Goals with real numbers. Log “ran 8k” or “sent the proposal” in passing, and Compass tracks the metrics and answers the only question that matters: <b>“Am I on course?”</b> Verdict woven into every morning brief.</p>
+        <p>Goals with real numbers. Log “ran 8k” or “sent the proposal” in passing, and Compass tracks the metrics and answers the only question that matters: <b>“Am I on course?”</b> Add its goal section to your approved brief during setup. Interactive dashboards depend on the tools available in your app.</p>
         <div class="chips"><i>Goals</i><i>Metrics</i><i>Daily log</i><i>The verdict</i></div>
       </div>
       <div class="modcard rev">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></svg></span>
         <h3>Ghostwriter<span>your voice</span></h3>
-        <p>A complete writing system for newsletters, LinkedIn, X and sales pages, all in <b>your voice</b>, drawn from your Brand Library. With a feedback loop that learns from what actually performed.</p>
+        <p>A complete writing system for newsletters, LinkedIn, X and sales pages, all in <b>your voice</b>, drawn from your Brand Library. Save approved pieces to your Marketing tracker and review their actual results. Drafting does not publish anything.</p>
         <div class="chips"><i>8 formats</i><i>Voice DNA</i><i>Learning loop</i></div>
       </div>
       <div class="modcard rev">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg></span>
         <h3>Outreach<span>relationships</span></h3>
-        <p>A relationship briefing inside your 7:00 morning brief: who to write today and why, with a message that <b>sounds like you, not a robot.</b> Every relationship has a stage, a rhythm and a dated next move, and none goes quiet unnoticed.</p>
+        <p>Ask who needs a follow-up, or include relationships in your approved morning brief. It uses contact history, cadence and dated next moves to draft a message <b>in your voice.</b> You review it and decide whether to send.</p>
         <div class="chips"><i>In the morning brief</i><i>Dated follow-ups</i><i>Human messages</i></div>
       </div>
     </div>
@@ -651,19 +670,19 @@
     <div class="trustgrid">
       <div class="trust rev">
         <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-        <div><h3>Your data stays yours</h3><p>Everything lives in <b>your</b> Notion workspace. No middleman platform, no export hostage. Cancel tomorrow, and your data doesn't move.</p></div>
+        <div><h3>Your data stays yours</h3><p>Your saved business records stay in <b>your</b> Notion workspace. You choose which copy the assistant can access, and those records remain yours if you stop using the plugins.</p></div>
       </div>
       <div class="trust rev">
         <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
-        <div><h3>Non-destructive by contract</h3><p>Updates preview what they'll change, back up before anything structural, and never touch your rows. Additive by design, always with your consent.</p></div>
+        <div><h3>Non-destructive by contract</h3><p>Review the update preview before applying changes. Keep a workspace backup and the previous plugin files. Existing customers can update their current copy without starting again.</p></div>
       </div>
       <div class="trust rev">
         <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></span>
-        <div><h3>Self-diagnosing</h3><p>Ask <b>“is everything okay with my system?”</b> and a full structural health check runs in under a minute, with one-click fixes.</p></div>
+        <div><h3>Self-diagnosing</h3><p>Ask <b>“is everything okay with my system?”</b> to run a structural health check. It reports what it verified, what needs attention and which repairs need your approval.</p></div>
       </div>
       <div class="trust rev">
         <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span>
-        <div><h3>Set up with you, 1-on-1</h3><p>A few guided sessions, live, on your real business. I don't leave you alone with it: you bring the context, I set it up, until it runs.</p></div>
+        <div><h3>Set up with you, 1-on-1</h3><p>A few guided sessions, live, on your real business. You bring the context, I help configure the agreed workflows, and we check the results together. You can see what’s ready and what still needs attention.</p></div>
       </div>
     </div>
   </div>
@@ -680,12 +699,12 @@
         <div class="founder-creds">
           <div class="c"><span class="n">21yr</span><span class="t">In marketing &amp; sales, <b>starting 2004</b>, on the ground, no playbook.</span></div>
           <div class="c"><span class="n">11yr</span><span class="t">In <b>pharma marketing</b>, the most regulated environment there is, where a wrong message has real consequences.</span></div>
-          <div class="c"><span class="n">4</span><span class="t"><b>AI systems</b> built for one New York firm. The result sits at the top of this page.</span></div>
+          <div class="c"><span class="n">4</span><span class="t"><b>AI systems</b> built as previous client work.</span></div>
         </div>
       </div>
       <div class="founder-body rev">
         <h2>I've spent 21 years taking work <em>off people's plates.</em></h2>
-        <p>I started in 2004 in Romania. I spent eleven years doing marketing for doctors and patients in Australia, where you learn fast that a careless message costs something real. Most recently I built four AI systems for a firm in New York.</p>
+        <p>I started in 2004 in Romania. I spent eleven years doing marketing for doctors and patients in Australia, where you learn fast that a careless message costs something real. Most recently I built four AI systems for a client.</p>
         <p>I kept seeing the same thing: a good operator, a business that works, and a founder carrying all of it in their head. Not from a lack of ideas, from too many unfinished things on the list. The Founders’ Brain is what I built to fix that. <b>It's the system I wish every founder I've worked with had from day one.</b></p>
         <div class="founder-sig">Razvan Popescu<span>Preiau. Rezolv. Tu respiri. (I take it on. I solve it. You breathe.)</span></div>
       </div>
@@ -701,11 +720,11 @@
     <div class="faqs rev">
       <details>
         <summary>“I tried Notion before, and quit.”<span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Because you had to maintain it. Here <b>the AI maintains it</b>: you talk, it files, links and updates. The structure keeps itself clean, and a health check fixes any drift with one click.</div>
+        <div class="a">If upkeep was the problem, your assistant can help <b>file, link and update the work you bring it</b>. You still supply the context and review the results. Some trackers are manual, and a health check can flag structural issues that need attention.</div>
       </details>
       <details>
         <summary>“Doesn't ChatGPT already do this?”<span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">A generic chat forgets between sessions and doesn't know your business. The Brain has <b>structured memory in your own Notion</b> and learns your voice, offers, customers and rules in a guided brand interview, on day one.</div>
+        <div class="a">The Brain adds <b>shared business records in your own Notion</b> and workflows for using them. Brand onboarding supplies your voice, offers, customers and rules, so your assistant can work from the same context across sessions.</div>
       </details>
       <details>
         <summary>“I don't have time to implement anything.”<span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -713,19 +732,19 @@
       </details>
       <details>
         <summary>“What if an update breaks something?”<span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Updates preview what they'll change, <b>back up before anything structural</b>, and never touch your rows. A sub-minute health check with one-click fixes ships with the system.</div>
+        <div class="a">Use the update preview, <b>back up your workspace</b> and keep the previous plugin files. The kit includes update and recovery guidance. Reinstalling an older plugin does not reverse changes already made to Notion.</div>
       </details>
       <details>
         <summary>“How much does it cost?”<span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">I don't work with fixed packages. It's a 1-on-1 engagement, a few sessions, on your business. <b>Let's talk for 15-20 minutes</b>: tell me where you are, and if it's a fit I'll tell you exactly how and how much. If it's not, you'll hear that just as straight.</div>
+        <div class="a">I don't work with fixed packages. <b>Let's talk for 15-20 minutes</b> about your business. If it's a fit, we agree which plugins and workflows are included, the setup and onboarding work, and any support after handover before you commit. The quote covers that scope. If it's not a fit, I'll tell you.</div>
       </details>
       <details>
         <summary>“What tools do I have to pay for?”<span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">One subscription: <b>Claude Pro, $20 a month</b>, because the free Claude plan can't run this. On Notion, <b>any plan works, including free</b>, and you can skip Notion AI entirely: your Brain does that thinking, and does it better. Notion's <b>Business</b> plan is the ideal home if you have it, since the read-heavy parts (your morning brief, the money tools) can occasionally hit an hourly limit on the lower plans and come back thin, then clear on their own. Ideal, never required.</div>
+        <div class="a">Use <b>Claude Cowork or Codex</b> with an account that supports plugins and the Notion connection. You can start with <b>Notion Free</b>; Notion AI is not required. Your AI provider’s usage limits still apply. Check your chosen provider’s current plan before subscribing. Your kit’s Start Here guide covers both routes. Visit <a href="/install">setup help</a> if you need a hand.</div>
       </details>
       <details>
         <summary>“What happens to my data if I stop?”<span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Nothing moves. Everything lives in <b>your own Notion workspace</b>. Stop tomorrow and every record stays exactly where it is, yours.</div>
+        <div class="a">Your saved records stay in <b>your own Notion workspace</b>. Stopping the plugins does not remove those records.</div>
       </details>
     </div>
   </div>
@@ -736,7 +755,7 @@
   <div class="wrap">
     <p class="eyebrow rev">One conversation away</p>
     <h2 class="rev">One brain.<br><em>Your business.</em></h2>
-    <p class="lead rev">Set up with you. Useful by the first morning. Yours forever, because it lives in <strong>your</strong> Notion, speaks in <strong>your</strong> voice, and works on <strong>your</strong> numbers.</p>
+    <p class="lead rev">Set up with you. Built around <strong>your</strong> business records, <strong>your</strong> voice and <strong>your</strong> numbers. The kit guides you from installation to the onboarding you choose.</p>
 
     <div class="cta-row rev">
       <a class="btn btn-accent" href="mailto:razvan@razvanpopescu.com?subject=Let%27s%20talk%20about%20The%20Founders%27%20Brain">
@@ -753,7 +772,8 @@
 <footer>
   <div class="wrap">
     <div><b style="color:var(--dark-text)">The Founders’ Brain</b></div>
-    <div>Built on Claude AI × your Notion</div>
+    <div>Claude Cowork or Codex × your Notion</div>
+    <div><a href="/install">Setup help</a></div>
     <div><a href="https://creierulafacerii.ro/" lang="ro" hreflang="ro">În română: creierulafacerii.ro</a></div>
     <div>By <a href="https://razvanpopescu.com" rel="author">Razvan Popescu</a></div>
   </div>
@@ -777,22 +797,23 @@
     window.addEventListener('load', function(){ setTimeout(revealAll, 1400); });
   }
 
-  // count-up stats
-  var cio = new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(!e.isIntersecting) return;
-      cio.unobserve(e.target);
-      var to = +e.target.dataset.count;
-      if(reduced){ e.target.textContent = to; return; }
-      var t0 = performance.now();
-      (function tick(t){
-        var k = Math.min(1,(t-t0)/1100);
-        e.target.textContent = Math.round(to*(1-Math.pow(1-k,3)));
-        if(k<1) requestAnimationFrame(tick);
-      })(t0);
-    });
-  },{threshold:.6});
-  document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent='0'; cio.observe(el); });
+  // Leave the real numbers visible without animation or observer support.
+  if(!reduced && 'IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        cio.unobserve(e.target);
+        var to = +e.target.dataset.count;
+        var t0 = performance.now();
+        (function tick(t){
+          var k = Math.min(1,(t-t0)/1100);
+          e.target.textContent = Math.round(to*(1-Math.pow(1-k,3)));
+          if(k<1) requestAnimationFrame(tick);
+        })(t0);
+      });
+    },{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+  }
 
   // one FAQ open at a time
   var faqs = document.querySelectorAll('#faq details');

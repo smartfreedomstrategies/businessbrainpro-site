@@ -17,7 +17,9 @@ Deployed on **Cloudflare Pages** from Git, exactly like `razvanpopescu-site` and
 ## What's in the box
 - `index.html`: the live landing page
 - `coming-soon-backup.html`: the old holding page (noindex)
-- `install.html`: the install and rescue page
+- `install.html`: the short setup-help page (intentionally noindex)
+- `404.html`: branded missing-page response for Cloudflare Pages
+- `robots.txt` and `sitemap.xml`: crawl guidance and the canonical public homepage
 - `_redirects`: /template, /template-notion, /full-page
 - `DEPLOY-cloudflare-pages.md` — the Cloudflare Pages deploy steps
 - `DNS-checklist-cloudflare.md` — a DNS verification template to fill in before attaching the domain
@@ -51,7 +53,23 @@ Repeat for `www.thefoundersbrain.com` if you want www to resolve too. Keep `busi
 ## Also going on this domain (next steps, out of scope for now)
 
 `businessbrainpro.com` is also the EN ecosystem infrastructure:
-- **`_redirects`** ✅ *live in this repo*: the stable Cloudflare Pages redirects. `/template` (and the alias `/template-notion`) → the published Command Center — Template v1 Notion link, 302. The Command Center skills ship ONLY this stable `/template` path, so it is load-bearing for a fresh client install. Destination is recorded in the umbrella repo's `versions.md`; change it here, never in the plugins. (`/install` is still a future addition.)
+- **`_redirects`** ✅ *live in this repo*: the stable Cloudflare Pages redirects. `/template` (and the alias `/template-notion`) → the published Command Center — Template v1 Notion link, 302. The Command Center skills ship ONLY this stable `/template` path, so it is load-bearing for a fresh client install. Destination is recorded in the umbrella repo's `versions.md`; change it here, never in the plugins. `/install` points clients to Start Here and provides prerequisites, troubleshooting and contact details. The kit holds the full checklist and prompts.
 - **`updates.json`** ✅ *live in this repo*: the update-discovery file, served at `businessbrainpro.com/updates.json`. Generated with `gen-updates-json.sh` from the umbrella repo (never edited by hand) and copied here on every release. session-starter Step 0.5b reads it (weekly cache, fail-silent, read-only) to nudge clients when a newer version ships. Exposes only product names + versions — no client data. **On every release: regenerate in the umbrella, copy the file here, push.**
 
 These unlock the remaining steps in `launch-checklist.md` (the update endpoint; verifying the redirects resolve after deploy).
+
+## Delivery alignment, 15 October 2026
+
+The homepage and `/install` follow the client kit: choose Claude Cowork or Codex, install, run shared technical setup, then choose onboarding. Cowork uploads the included `.plugin` files. Codex registers the bundled local marketplace, restarts the app and installs from Plugins. The private client kit remains the source for copyable prompts and plugin files; this public site does not host the kit.
+
+Reports are opt-in, with three core schedules and two optional Ghostwriter schedules. Compass and Outreach add sections to approved core briefs. Runtime availability and connection access are checked during setup; no exact-minute or automatic catch-up guarantee is made. The kit’s Start Here guide explains dashboard consent, scheduling and updates. Keep detailed instructions there rather than duplicating them on `/install`.
+
+The original design, guided-service offer, contact address and template redirect destination are preserved. The generated `updates.json` must match the released umbrella version file. Before publishing, check links, HTML structure, copy claims and JSON parity. A push to main publishes both pages and the update feed.
+
+## Local quality audit, 15 October 2026
+
+The local draft includes a skip-to-content link, reduced-motion CSS, a counter fallback when IntersectionObserver is unavailable, and narrow-screen sizing fixes. Orange buttons use the existing darker brand orange for white text (calculated contrast 5.08:1). Both pages use the existing branded cover for social previews. The new 404 page follows [Cloudflare Pages serving behavior](https://developers.cloudflare.com/pages/configuration/serving-pages/); existing redirect destinations are unchanged. The sitemap includes only the indexable homepage, not setup help, the backup or 404.
+
+Verified locally: HTML structure, titles/descriptions, heading counts, local links and fragments, social-image file/dimensions, sitemap/robots consistency, preserved approved copy, script behavior in normal/reduced-motion/no-observer cases, and external destination/font HTTP responses. These are source and isolated-script checks, not a rendered accessibility certification.
+
+Still unverified: rendered desktop/mobile layouts, actual keyboard traversal, social-platform cropping, Lighthouse/Core Web Vitals, and new 404/SEO-file responses after deployment. The browser tool denied access to the local file URL; do not infer visual or performance results from source checks. Nothing was deployed. Publishing requires separate approval because pushing the connected branch deploys automatically.

@@ -3,15 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Set up your Founders’ Brain</title>
-<meta name="description" content="Your Founders’ Brain, set up start to finish. We do it together on a call: the install, then the brand interview. Nothing here can break anything.">
+<title>Founders’ Brain setup help</title>
+<meta name="description" content="Open Start Here in your client kit for Claude Cowork or Codex installation. Find prerequisites, quick troubleshooting and personal help here.">
 <meta name="robots" content="noindex">
-<meta property="og:title" content="Set up your Founders’ Brain">
-<meta property="og:description" content="The whole setup, step by step. We do it together on a call: the install, then the brand interview.">
+<link rel="canonical" href="https://thefoundersbrain.com/install">
+<meta property="og:title" content="Founders’ Brain setup help">
+<meta property="og:description" content="Start with the guide in your client kit. Find what you need and get help if setup stalls.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://thefoundersbrain.com/assets/notion-cover-tfb-dark.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="3000">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="The Founders’ Brain: a memory for your business in your own Notion.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thefoundersbrain.com/assets/notion-cover-tfb-dark.png">
+<meta name="twitter:image:alt" content="The Founders’ Brain: a memory for your business in your own Notion.">
 <meta property="og:url" content="https://thefoundersbrain.com/install">
 <link rel="alternate" hreflang="en" href="https://thefoundersbrain.com/install">
-<link rel="alternate" hreflang="ro" href="https://creierulafacerii.ro/">
 <link rel="alternate" hreflang="x-default" href="https://thefoundersbrain.com/install">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='%230f0f0f' d='M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z'/%3E%3Cpath stroke='%23e8490e' d='M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z'/%3E%3Cpath stroke='%230f0f0f' d='M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -39,7 +47,7 @@
     background-image:radial-gradient(rgba(15,15,15,.05) 1px, transparent 1.4px);
     background-size:26px 26px;
   }
-  ::selection{background:var(--accent);color:#fff}
+  ::selection{background:var(--accent-deep);color:#fff}
   .glow{position:fixed;inset:0;z-index:0;pointer-events:none;
     background:
       radial-gradient(620px 440px at 15% 12%, rgba(232,73,14,.07), transparent 70%),
@@ -80,7 +88,7 @@
     box-shadow:0 1px 0 rgba(15,15,15,.02),0 18px 40px -34px rgba(15,15,15,.3);}
   .tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;
     padding:3px 9px;border-radius:6px;margin-bottom:9px}
-  .tag.core{background:var(--accent);color:#fff}
+  .tag.core{background:var(--accent-deep);color:#fff}
   .tag.addon{background:var(--accent-soft);color:var(--accent-deep);border:1px solid rgba(232,73,14,.25)}
   .gets b{display:block;font-size:16px;font-weight:900;color:var(--ink);margin-bottom:4px;letter-spacing:-.01em}
   .gets p{color:var(--muted);font-size:15px}
@@ -101,7 +109,7 @@
   .steps li::before{
     content:counter(step);position:absolute;left:18px;top:18px;
     width:32px;height:32px;border-radius:50%;
-    background:var(--accent);color:#fff;
+    background:var(--accent-deep);color:#fff;
     font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;
   }
   .steps li > b{display:block;font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.01em}
@@ -154,7 +162,7 @@
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
     min-height:52px;padding:14px 26px;border-radius:999px;
     font-size:16px;font-weight:700;text-decoration:none;white-space:nowrap;
-    background:var(--accent);color:#fff;
+    background:var(--accent-deep);color:#fff;
     transition:transform .25s,box-shadow .25s;
   }
   .btn svg{flex:none}
@@ -166,9 +174,19 @@
   @media (max-width:640px){footer .wrap{flex-direction:column;align-items:flex-start;gap:10px}.help{flex-direction:column;align-items:flex-start}}
   footer a{color:var(--ink);text-decoration:none;font-weight:700}
   footer a:hover{color:var(--accent-deep)}
+
+  /* Keyboard access and reduced-motion preferences. */
+  .skip-link{position:absolute;left:16px;top:8px;z-index:100;background:#0f0f0f;color:#fff;padding:10px 16px;border-radius:8px;transform:translateY(-180%)}
+  .skip-link:focus{transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .btn:hover,.corecard:hover,.modcard:hover{transform:none}
+  }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="glow"></div>
 
 <header>
@@ -188,395 +206,28 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
   <div class="wrap">
-    <p class="badge"><span class="dot"></span>Welcome</p>
-    <h1>Let's get your Founders’ Brain <em>set up</em>.</h1>
-    <p class="sub">The whole setup, on one page. It happens in the Claude desktop app, and we do it together on our call. Plan about an hour end to end: <b>the install</b> (about fifteen minutes), <b>the build</b> (six to eight), <b>the brand interview</b> (fifteen to twenty, a conversation, not a form), then your first built asset and the add-on setups. Read this once before we talk, then keep it to look back on.</p>
+    <p class="badge"><span class="dot"></span>Setup help</p>
+    <h1>Start with<br><em>your kit.</em></h1>
+    <p class="sub">Unzip the Founders’ Brain kit you received and open <b>1. START-HERE.html</b>. Choose <b>Claude Cowork</b> or <b>Codex</b>, then follow its checklist: installation, technical setup, and onboarding when you’re ready.</p>
+    <div class="calm"><p><b>Keep the kit’s files together.</b> Start Here contains the installation instructions and copy-and-paste prompts for your included plugins. Keep that guide open as you work through the steps.</p></div>
 
-    <div class="calm">
-      <p><b>You do not have to do any of this alone.</b> We do every step together on the call, live.</p>
-      <p>And you cannot break anything. Nothing gets deleted, and every real change asks you first. If a step ever looks off, we stop and sort it.</p>
-    </div>
-
-    <h2>Before our call</h2>
-    <p class="lead">Five minutes of prep and the call itself is smooth. Two accounts, one app, then a short list to have within reach.</p>
+    <h2 id="ready">What you’ll need</h2>
     <ul class="gets">
-      <li>
-        <b>A Notion account, and a home for this</b>
-        <p>New to Notion? Sign up at <a href="https://www.notion.so" target="_blank" rel="noopener">notion.so</a> with your email or Google, pick "for personal use" if it asks, and you're done.</p>
-        <p><b>Already use Notion for your own work?</b> Then the cleanest thing is to give your Founders&rsquo; Brain its own fresh workspace. It takes a minute to create, your existing pages stay completely untouched and separate, and you can move whatever you like across later, at your own pace. We'll sort this out together, so do not worry about getting it right now.</p>
-        <p class="know"><b>Ready when:</b> Notion opens and you see your sidebar.</p>
-      </li>
-      <li>
-        <b>Which Notion plan</b>
-        <p>Any plan works, including Free. Notion's Business plan is the ideal home if you have it, or if a new signup hands you the 30-day trial, but it is never a requirement. More in Quick answers, at the bottom of this page.</p>
-      </li>
-      <li>
-        <b>Claude Pro</b>
-        <p>$20 a month, and the free plan will not work for this: plugins and Cowork need a paid plan. Sign up or log in at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>, then Settings, Billing, subscribe to Pro.</p>
-        <p class="know"><b>Ready when:</b> your account shows Pro.</p>
-      </li>
-      <li>
-        <b>The Claude desktop app</b>
-        <p>Download it at <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a> (Mac or Windows, the steps are identical), install it, and log in with the SAME account you just upgraded. The website and the phone app cannot do the setup.</p>
-        <p class="know"><b>Ready when:</b> Claude opens as its own app and you are signed in.</p>
-      </li>
-      <li>
-        <b>Recommended: the Claude extension for Chrome</b>
-        <p>If Chrome is your browser, add the <a href="https://claude.com/chrome" target="_blank" rel="noopener">Claude extension</a> and sign in with the same account. It puts Claude one click away while you browse. Not required for the install; nice to have from day one.</p>
-        <p class="know"><b>Ready when:</b> the Claude icon sits in your Chrome toolbar.</p>
-      </li>
-      <li>
-        <b>Your logins, within reach</b>
-        <p>The number one thing that stalls a setup is hunting for a password halfway through. Two minutes now saves the headache.</p>
-      </li>
+      <li><b>Your client kit</b><p>If you haven’t received it or can’t find it, <a href="#contact">message me</a> for your copy.</p></li>
+      <li><b>Claude Cowork or Codex</b><p>Use the desktop app and an account with access to plugins and the Notion connection. You only need the app you plan to use.</p></li>
+      <li><b>Your own Notion workspace</b><p>You can start with Notion Free; Notion AI is not required. The kit guides you through duplicating the template and connecting your assistant to your copy.</p></li>
     </ul>
 
-    <h3>And for the interview, have these handy</h3>
-    <p class="lead">Right after the build, your Founders&rsquo; Brain interviews you about your business. Fifteen to twenty minutes, conversational, no wrong answers. It goes fastest when you have:</p>
-    <ul class="gets">
-      <li>
-        <b>A link to your website or your main social profile</b>
-        <p>Or any doc that describes your business. Give it that and it drafts most of your profile on its own; you just correct what it got wrong.</p>
-      </li>
-      <li>
-        <b>Your offers, with prices</b>
-        <p>Everything you sell, what each thing costs, and which one is the main offer right now.</p>
-      </li>
-      <li>
-        <b>An honest picture of where the business is today</b>
-        <p>The system shapes itself around the truth, not the ambition.</p>
-      </li>
-    </ul>
-    <p class="more"><span><b>That is all the homework there is.</b> You talk, it writes.</span></p>
-
-    <h2>What you're getting</h2>
-    <p class="lead">One core system, plus add-ons that snap on when you want them. Each one is a single file that goes in the same way.</p>
-    <ul class="gets">
-      <li>
-        <span class="tag core">The core</span>
-        <b>Command Center</b>
-        <p>Your whole business, organized in Notion, that fills itself in as you talk. Your phone quick-add, Capture, comes included with it (it gets its own five-minute phone setup, further down this page).</p>
-      </li>
-      <li>
-        <span class="tag addon">Add-on</span>
-        <b>Compass</b>
-        <p>Goals, a daily check-in, and a straight answer to "am I on track?" whenever you ask.</p>
-      </li>
-      <li>
-        <span class="tag addon">Add-on</span>
-        <b>Ghostwriter</b>
-        <p>Writes in your voice. Newsletters, posts, pages, sales copy, all of it, drawn from what your Founders’ Brain already knows about you.</p>
-      </li>
-      <li>
-        <span class="tag addon">Add-on</span>
-        <b>Outreach</b>
-        <p>Keeps your relationships warm and drafts messages that sound like you, not a robot.</p>
-      </li>
-    </ul>
-    <p class="more"><span><b>More on the way.</b> New add-ons land regularly. When one arrives that fits you, it installs exactly like the rest: one file, about thirty seconds. You will never have to relearn anything.</span></p>
-
-    <h2>The setup, step by step</h2>
-    <p class="lead">We will do these together on the call. Here is the whole path so you know what is coming.</p>
-    <ol class="steps">
-      <li>
-        <b>Create your Founders’ Brain project, and give it a folder</b>
-        <p>In the Claude desktop app, create a new <b>project</b> and name it whatever you like. Before you finish, click <b>Add folder</b> and pick an empty folder on your computer (make a new one called "Founders Brain" in your Documents if you need to). This is your home base.</p>
-        <p>The folder is what makes this project your home base on this computer, the place where the full system and its add-ons run. Your working instructions travel inside the system itself, so nothing gets stored in the folder and there is nothing to keep up to date.</p>
-        <p>Later you will add one tiny project for your phone, the Inbox, with <b>no</b> folder, thirty seconds. Apart from that, this is the only project you ever create in Claude. Your launches, offers, and clients get "projects" too, but those live in Notion, and your Founders&rsquo; Brain builds them for you.</p>
-        <figure class="shot">
-          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
-               <img src="assets/shot-1-new-project.png" alt="The new-project screen in the Claude desktop app"> -->
-          <div class="ph">
-            <b>Screenshot to add</b>
-            <span class="fn">assets/shot-1-new-project.png</span>
-            <span>The new-project screen in the Claude desktop app. Creating a project gives your Founders’ Brain a home base it remembers every time you open a chat.</span>
-          </div>
-        </figure>
-        <p class="know"><b>You'll know it worked when</b> the project shows up in the sidebar and opens to a fresh, empty chat.</p>
-      </li>
-      <li>
-        <b>Copy your Notion template</b>
-        <p>Go to <a href="https://thefoundersbrain.com/template" target="_blank" rel="noopener"><code>thefoundersbrain.com/template</code></a> and click <b>Duplicate</b> (the icon at the top right). That drops a fresh, private copy into your own Notion. This is where your Founders’ Brain keeps everything. If you have more than one Notion workspace, duplicate it into the one we picked for this, and keep it private rather than in a space you share with colleagues.</p>
-        <figure class="shot">
-          <img src="assets/shot-2-duplicate.png" alt="The Command Center template page in Notion">
-          <figcaption>The template you land on. To copy it, click <b>Duplicate</b>, the icon at the top right of the page.</figcaption>
-        </figure>
-        <p class="know"><b>You'll know it worked when</b> a page called <b>Command Center — Template</b> appears in your own Notion sidebar.</p>
-      </li>
-      <li>
-        <b>Let Claude see your Notion</b>
-        <p>Connect the Notion connector in Claude and click <b>Allow</b>. This is what lets your Founders’ Brain read and build inside your workspace. It only ever touches your own workspace, nothing else. If you have more than one workspace, point it at the one holding the template you just copied.</p>
-        <p>Worth ten seconds: open a chat in your project and say <code>check my setup</code>. It confirms it can see your Notion and find your template, so a connector pointed at the wrong workspace turns up now instead of halfway through the build.</p>
-        <figure class="shot">
-          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
-               <img src="assets/shot-3-allow.png" alt="The Notion connector Allow screen"> -->
-          <div class="ph">
-            <b>Screenshot to add</b>
-            <span class="fn">assets/shot-3-allow.png</span>
-            <span>The Notion connector's Allow screen. Clicking Allow is what lets your Founders’ Brain read and build inside your Notion, and nowhere else. Blur anything personal.</span>
-          </div>
-        </figure>
-        <p class="know"><b>You'll know it worked when</b> Notion shows as connected in your Connectors list.</p>
-      </li>
-      <li>
-        <b>Get your files from me</b>
-        <p>I send your files to you directly: the core (<code>command-center.plugin</code>), any add-ons you have (<code>compass.plugin</code>, <code>ghostwriter.plugin</code>, <code>outreach.plugin</code>), and one text file for your phone setup (<code>capture-web-project-instructions.md</code>, used further down). Save them somewhere you can find them (your Downloads folder is fine).</p>
-        <p class="know"><b>You'll know it worked when</b> you can see the plugin file (or files) in your Downloads.</p>
-      </li>
-      <li>
-        <b>Add each plugin in the Claude desktop app</b>
-        <p>Same quick path for every file. Do the core first, then each add-on the same way.</p>
-        <span class="path">Customize → Personal plugins → + → Create plugin → Upload plugin → pick the file I sent</span>
-        <figure class="shot">
-          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
-               <img src="assets/shot-4-personal-plugins.png" alt="The Personal plugins menu open"> -->
-          <div class="ph">
-            <b>Screenshot to add</b>
-            <span class="fn">assets/shot-4-personal-plugins.png</span>
-            <span>The Personal plugins menu (Customize → Personal plugins). This is where every plugin gets added to Claude.</span>
-          </div>
-        </figure>
-        <figure class="shot">
-          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
-               <img src="assets/shot-5-upload.png" alt="The Upload plugin file picker with the .plugin file selected"> -->
-          <div class="ph">
-            <b>Screenshot to add</b>
-            <span class="fn">assets/shot-5-upload.png</span>
-            <span>The Upload plugin file picker with your <code>.plugin</code> selected. This is the moment the plugin file goes in.</span>
-          </div>
-        </figure>
-        <figure class="shot">
-          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
-               <img src="assets/shot-6-installed.png" alt="The plugins showing as installed in the list"> -->
-          <div class="ph">
-            <b>Screenshot to add</b>
-            <span class="fn">assets/shot-6-installed.png</span>
-            <span>Your plugins listed as installed. Confirms they loaded and are ready to use.</span>
-          </div>
-        </figure>
-        <p class="know"><b>You'll know it worked when</b> each one appears in your Personal plugins list.</p>
-      </li>
-      <li>
-        <b>Restart the app, and check one setting</b>
-        <p>Fully quit and reopen the Claude desktop app. Plugins only wake up on a clean start, so this one matters.</p>
-        <p>While you are in there, one switch to check. Open <b>Settings</b>, then <b>Cowork</b>, and make sure <b>"Run new tasks in the cloud" is OFF</b>. Your automatic reports need to run on this computer: that is where they can properly reach your Notion and keep your live dashboards working. Run them in the cloud and they can quietly lose access to things they built for you.</p>
-        <span class="path">Settings → Cowork → "Run new tasks in the cloud" → off</span>
-      </li>
-      <li>
-        <b>Say the word</b>
-        <p>Open a <b>new chat inside your project</b> and say <code>set up my command center</code>. That is the moment your Founders’ Brain comes alive and starts building your system with you.</p>
-        <figure class="shot">
-          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
-               <img src="assets/shot-7-setup.png" alt="A fresh chat after saying set up my command center"> -->
-          <div class="ph">
-            <b>Screenshot to add</b>
-            <span class="fn">assets/shot-7-setup.png</span>
-            <span>A fresh chat right after you say <code>set up my command center</code>. This wakes the system up and starts building with you.</span>
-          </div>
-        </figure>
-        <p class="know"><b>You'll know it worked when</b> it answers by asking for your business name and your first name. That is it waking up.</p>
-      </li>
-    </ol>
-
-    <h2>What happens when you say it</h2>
-    <p class="lead">The play-by-play after "set up my command center", so nothing on the call feels surprising.</p>
-    <ol class="steps">
-      <li>
-        <b>Two quick questions</b>
-        <p>Your business name and your first name. That is all the typing in the whole build.</p>
-      </li>
-      <li>
-        <b>A taste while it works</b>
-        <p>It offers to look at your website (or one sentence about what you do) and reflects your business back at you while the build runs. Say yes; it also makes the interview faster later.</p>
-      </li>
-      <li>
-        <b>It checks your copy of the template came in clean</b>
-        <p>And quietly repairs the small things Notion sometimes bends when a page gets duplicated. You will not see this part; it just happens.</p>
-      </li>
-      <li>
-        <b>It makes the workspace yours</b>
-        <p>Your brand on the title, your seven zones labeled, a few welcome entries so nothing opens looking dead.</p>
-      </li>
-      <li>
-        <b>It switches on your automatic reports</b>
-        <p>The morning brief every day at 7 (what's due, what moved, who's going quiet; with Outreach, your relationship list too), and two Friday reports (the patterns in your ideas, and the weekly recap). Your first report lands tomorrow morning.</p>
-      </li>
-      <li>
-        <b>Then the brand interview, straight away</b>
-        <p>Fifteen to twenty minutes of conversation about who you serve, what you sell, and how you sound. This is what the prep list at the top of this page is for.</p>
-      </li>
-      <li>
-        <b>And the finale</b>
-        <p>It builds you one real, branded asset you can use the same day. That is the moment it clicks.</p>
-      </li>
-    </ol>
-    <div class="calm">
-      <p><b>The build itself takes six to eight minutes</b> and it narrates while it works. If it asks you something mid-run, that is normal and good. Answer in plain English. There is no wrong answer.</p>
-    </div>
-
-    <h2>What arrives on its own, once you're set up</h2>
-    <p class="lead">The build switches these on for you. You never ask for them; they just show up. Wondering if they're on? Say <code>are my automatic reports switched on?</code> in any chat.</p>
-    <ul class="gets">
-      <li>
-        <b>Every morning at 7: the morning brief</b>
-        <p>What's due, what's overdue, what moved, plus one of yesterday's ideas picked out and proposed for development. Your first one lands the morning after setup.</p>
-      </li>
-      <li>
-        <b>Monday morning: the who-is-going-cold check</b>
-        <p>Leads and clients slipping quiet, with follow-up tasks queued for the most important ones (never more than five, so it never floods you).</p>
-      </li>
-      <li>
-        <b>Friday afternoon: two reports</b>
-        <p>The patterns in your ideas (the themes you keep circling, clustered from the last month), then the weekly recap: done, moved, captured, and what's stalling.</p>
-      </li>
-      <li>
-        <b>With add-ons, the list grows</b>
-        <p>Outreach adds your relationship list to the morning brief (who's waiting on you, message drafted). Compass folds your goal verdict into the same brief. Ghostwriter can add weekday writing candidates ("candidates every morning") and a Friday content look-back; those two are yours to switch on when you want them.</p>
-      </li>
-    </ul>
-    <p class="more"><span><b>They run on your computer</b>, switched on once during the build, nothing to maintain. And nothing is lost if your machine was off: a report scheduled for 7 while your laptop was shut simply runs when you next turn the computer on and open Claude. Start at 8:45 and your 7 o'clock brief arrives then. It waits for you rather than passing you by.</span></p>
-
-    <h2>Waking up each add-on</h2>
-    <p class="lead">Every add-on installs the same way (step 5 above), and each one wakes up with its own setup command, said in a <b>new chat inside your project</b>. Run each one's setup right after the build: it takes a moment, installs its pieces, and registers the add-on in your system so health checks and updates can see it.</p>
-    <ul class="gets">
-      <li>
-        <span class="tag addon">Add-on</span>
-        <b>Compass</b>
-        <p>Say <code>set up compass</code>. It lays its goal foundation in your trackers and registers itself. Then give it your first goal, or just say the ambition with a number in it ("20 new clients by December"). It interviews you for a few minutes about the goal and the numbers that prove it is moving, then builds the whole tracking structure in Notion: the goal, the metrics, the habit that keeps it moving, and a live dashboard. From then on you just talk: "three sales calls today", "ran 5 miles", "am I on track?". Your goal verdict also joins your morning brief on its own, so every day starts with where you stand.</p>
-        <p class="know"><b>You'll know it worked when</b> it confirms Compass is set up instead of asking what Compass is.</p>
-      </li>
-      <li>
-        <span class="tag addon">Add-on</span>
-        <b>Ghostwriter</b>
-        <p>Say <code>set up ghostwriter</code>. It registers itself and offers where to start. The one that matters first is <code>extract my voice</code>: it studies your own writing so everything it drafts sounds like you, not like AI. No published writing yet? Say <code>run the brand foundation</code> instead: a short strategy interview that gives it a base. Either way it then offers a menu of optional brand documents (your beliefs, your visual style, and so on); the voice one is the only must. After that, "write my newsletter" and "what should I write today?" just work. And if you want the day's writing candidates waiting for you every weekday morning, say "candidates every morning" once and they join your automatic reports.</p>
-        <p>And no, this is not the brand interview again: that one taught your system your business. This one tunes the writing.</p>
-        <p class="know"><b>You'll know it worked when</b> it confirms Ghostwriter is set up and asks where you want to start.</p>
-      </li>
-      <li>
-        <span class="tag addon">Add-on</span>
-        <b>Outreach</b>
-        <p>Say <code>set up outreach</code>. It readies your People tracker for relationship work and adds the relationship list to your morning brief (who is going cold, who you owe a reply, with the message already drafted). From then on: "I met someone at an event", "what do I reply?", "who's going cold?". It writes; you always press send.</p>
-        <p class="know"><b>You'll know it worked when</b> it confirms your relationship radar is on.</p>
-      </li>
-    </ul>
-    <p class="know"><b>Then prove the lot:</b> say <code>check my setup</code>, then <code>are my automatic reports switched on? list them</code>. Expect a green light and five reports: the four the build switched on, plus Outreach's morning list.</p>
-    <p class="more"><span><b>The core needs no magic words beyond the first one.</b> "Set up my command center" runs once; after that its brand interview, brand brief, and first built asset flow on their own, and every later session starts with "catch me up".</span></p>
-
-    <h2>Your phone: the Inbox (everyone gets this, five minutes)</h2>
-    <p class="lead">One piece lives on <b>claude.ai in the browser</b> instead of the desktop app: the Inbox, your phone. It is included with the core, and it is the part you may end up using most. Something hits you mid-walk, an idea, "ran 5 miles", a person you just met, a memory, and you say it to your phone. It lands in the right place in Notion on the spot, and you get half a line back. One project, whatever you have installed: with Compass it keeps your streaks and gives you the verdict; with Outreach it hands you the follow-up message and files the person.</p>
-    <ol class="steps">
-      <li>
-        <b>Create one small project, with no folder</b>
-        <p>In your browser, go to <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>, open <b>Projects</b>, and create a new project called <b>Inbox</b>. <b>Do not add a folder to this one.</b> A project with a folder only works on the computer that folder lives on, and this one has to work from your phone, so it stays folder-free. That is the whole difference between this and your home base.</p>
-      </li>
-      <li>
-        <b>Paste in the Inbox instructions</b>
-        <p>Open the file I sent you named <code>capture-web-project-instructions.md</code>, select all of it, and copy. Then open the new project's settings, find <b>Project instructions</b>, and paste everything in. That file IS the Inbox; there is nothing to install.</p>
-        <figure class="shot">
-          <!-- When the screenshot exists, replace this <div class="ph">…</div> with:
-               <img src="assets/shot-8-capture-project.png" alt="A claude.ai project with the Inbox instructions pasted into Project instructions"> -->
-          <div class="ph">
-            <b>Screenshot to add</b>
-            <span class="fn">assets/shot-8-capture-project.png</span>
-            <span>The Inbox project on claude.ai with the instructions pasted into the Project instructions field.</span>
-          </div>
-        </figure>
-      </li>
-      <li>
-        <b>Check Notion is on for that project</b>
-        <p>Same Notion connector as step 3 of the install; just make sure it is enabled for this project too.</p>
-      </li>
-      <li>
-        <b>Test it from your phone</b>
-        <p>Open the Claude app on your phone, open the Inbox project, and say: <code>capture this: test idea from my phone</code>. Then, if you have Compass: <code>ran 5 miles today</code>. If you have Outreach: <code>I met Alex at an event tonight, runs a design studio, wants help with launches</code>.</p>
-        <p class="know"><b>You'll know it worked when</b> the idea comes back as one short line with a link into Notion; the run gets logged on the spot with the score moving ("Day 3 in a row"); and Alex gets a short follow-up message you could send right now, saved to your People tracker the moment you say "save".</p>
-      </li>
-      <li>
-        <b>Pin it on your phone</b>
-        <p>In the Claude app on your phone, find the Inbox project and pin it so it sits at the top and opens in one tap. It is the only phone project you need.</p>
-      </li>
-    </ol>
-    <p class="more"><span><b>How you'll use it, day to day:</b> open a fresh Inbox conversation each morning (it stamps the date), then just talk, or dictate, from wherever the thing finds you. Everything is filed as it arrives, so nothing waits for the evening and nothing is lost if you skip it. Want to take an idea further? Say "let's flesh out [the idea]" and it develops it on the spot. In the evening, an optional <code>tidy up</code> reviews what the day filed, fixes any routing, folds duplicates, and points out the one or two ideas with legs. Your morning relationship list and your goal verdict are switched on from the desktop app, not here.</span></p>
-
-    <h2>Already set up? Adding an add-on or re-installing</h2>
-    <p class="lead">If your Founders’ Brain is already running and you just need to add an add-on (or re-load a plugin after an update), skip everything above. It is three quick steps, no re-doing Notion.</p>
-    <ol class="steps">
-      <li>
-        <b>Save the file I sent</b>
-        <p>For an add-on it is a new <code>.plugin</code>. For an update it is the newer version of one you already have.</p>
-      </li>
-      <li>
-        <b>Upload it the same way</b>
-        <p>An update just replaces the old one.</p>
-        <span class="path">Customize → Personal plugins → + → Create plugin → Upload plugin → pick the file</span>
-      </li>
-      <li>
-        <b>Restart, then use it</b>
-        <p>Quit and reopen the app, start a <b>new chat inside your project</b>, and say the add-on's setup command (it's in "Waking up each add-on", just above). No re-duplicating Notion, no re-doing your setup.</p>
-      </li>
-    </ol>
-
-    <h2>Something not working?</h2>
+    <h2 id="help">If you get stuck</h2>
     <ul class="rescue">
-      <li>
-        <b>Not all your tools showed up</b>
-        <p>Usually an older file or an app that needs a restart. Ask me for the latest file, re-upload it (step 5), then fully quit and reopen the desktop app. Plugins only reload on a clean start.</p>
-      </li>
-      <li>
-        <b>The file won't upload</b>
-        <p>Make sure you are on the latest Claude desktop app and uploading the <code>.plugin</code> file exactly as I sent it (not unzipped, not renamed). If it still refuses, send me a screenshot and I will sort it.</p>
-      </li>
-      <li>
-        <b>It says it can't find your template</b>
-        <p>The duplicate did not happen, or it landed under an odd name. Open Notion, copy the link of the template page in your sidebar, paste it into the chat and say "set up my command center". It takes it from there.</p>
-      </li>
-      <li>
-        <b>It's building, but nothing shows up in Notion</b>
-        <p>Almost always the permission popups: click Allow when Claude asks to write to Notion (there is an option so it stops asking every time). And double-check Notion is connected with the same account you duplicated the template into.</p>
-      </li>
-      <li>
-        <b>Your morning brief didn't arrive</b>
-        <p>First, give it a moment: these run on your computer, so if it was off at 7, the brief runs shortly after you turn the machine on and open Claude, not at 7 sharp. If it still has not appeared with the computer on, then it is the automations themselves: open a chat and say "my morning brief didn't arrive, are my automatic reports switched on?" and it checks them and switches back on anything missing. Also worth re-checking that <b>"Run new tasks in the cloud"</b> is still OFF (Settings, Cowork). Any time you want the picture right now rather than waiting, say <code>catch me up</code>.</p>
-      </li>
-      <li>
-        <b>The app won't open, or it's running slow</b>
-        <p>That is before your Founders’ Brain is even involved. Restart the app, and your computer if it is sluggish, update to the latest version, then try step 5 again.</p>
-      </li>
+      <li><b>A plugin isn’t showing up</b><p>Check the installation steps for your selected app in Start Here, including any restart, then open a fresh task.</p></li>
+      <li><b>Your assistant can’t find the workspace</b><p>Check that you supplied your own Notion copy’s link and that the connection has access to it.</p></li>
+      <li><b>Setup stopped halfway through</b><p>Keep the conversation and ask your assistant to continue from the last completed step. Use the same Notion copy.</p></li>
     </ul>
-
-    <h2>Quick answers</h2>
-    <ul class="rescue">
-      <li>
-        <b>Do I have to pay for Notion?</b>
-        <p>No. The free plan runs the entire system for one person. The only subscription is Claude Pro.</p>
-      </li>
-      <li>
-        <b>Do I need the paid Notion plan?</b>
-        <p>No. Any plan works, and writing to your workspace is never affected. Notion's Business plan is the ideal home if you have it, but it is never a requirement. The one difference on Free and Plus: reading your trackers back (your daily briefing, the money tools) can hit an hourly rate limit now and then. Nothing breaks; the report just comes back thinner, and it clears within the hour.</p>
-        <p>Signed up fresh with a work email? You likely got a free 30-day Business trial, which runs everything at full strength. Keep it or let it lapse; either way the system keeps working.</p>
-      </li>
-      <li>
-        <b>Do I need Notion AI?</b>
-        <p>No, skip it. Your Founders’ Brain does the thinking, and it works better than the built-in one. Save the money.</p>
-      </li>
-      <li>
-        <b>Why does it feel slower or flatter some days?</b>
-        <p>Usually the chat just got very long. Open a fresh chat inside your project and say "catch me up". You lose nothing: your system's memory lives in Notion, not in the chat.</p>
-      </li>
-    </ul>
-
-    <div class="help">
-      <div class="t">
-        <b>Stuck on any of this?</b>
-        <span>Message me and I will walk you through it. This is done with you, never left to a manual.</span>
-      </div>
-      <a class="btn" href="mailto:razvan@razvanpopescu.com?subject=Help%20setting%20up%20The%20Founders%27%20Brain">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Message me
-      </a>
-    </div>
+    <p class="lead">Already using Founders’ Brain? Keep your existing workspace and follow <b>Help &amp; updates</b> in the kit before making changes.</p>
+    <div class="help" id="contact"><div class="t"><b>Need a hand?</b><span>Send me the app you’re using, the step you reached and a screenshot of the issue.</span></div><a class="btn" href="mailto:razvan@razvanpopescu.com?subject=Founders%27%20Brain%20setup%20help">Message me</a></div>
   </div>
 </main>
 
